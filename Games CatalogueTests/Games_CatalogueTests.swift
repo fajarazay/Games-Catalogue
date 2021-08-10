@@ -9,7 +9,7 @@
 import XCTest
 @testable import Games_Catalogue
 
-class Games_CatalogueTests: XCTestCase {
+class GamesCatalogueTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
