@@ -104,12 +104,10 @@
 		7CFFEB0926C30642007D10D9 /* Games Catalogue */ = {
 			isa = PBXGroup;
 			children = (
-				7CFFEB0A26C30642007D10D9 /* AppDelegate.swift */,
-				7CFFEB0C26C30642007D10D9 /* SceneDelegate.swift */,
-				7CFFEB0E26C30642007D10D9 /* ContentView.swift */,
-				7CFFEB1326C30643007D10D9 /* Assets.xcassets */,
-				7CFFEB1826C30643007D10D9 /* LaunchScreen.storyboard */,
-				7CFFEB1B26C30643007D10D9 /* Info.plist */,
+				7CFFEB4326C31075007D10D9 /* Supporting Files */,
+				7CFFEB4226C3105D007D10D9 /* Module */,
+				7CFFEB4126C31054007D10D9 /* Core */,
+				7CFFEB4026C31040007D10D9 /* App */,
 				7CFFEB1026C30642007D10D9 /* Games_Catalogue.xcdatamodeld */,
 				7CFFEB1526C30643007D10D9 /* Preview Content */,
 			);
@@ -140,6 +138,168 @@
 				7CFFEB3126C30643007D10D9 /* Info.plist */,
 			);
 			path = "Games CatalogueUITests";
+			sourceTree = "<group>";
+		};
+		7CFFEB4026C31040007D10D9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7CFFEB0A26C30642007D10D9 /* AppDelegate.swift */,
+				7CFFEB0C26C30642007D10D9 /* SceneDelegate.swift */,
+				7CFFEB0E26C30642007D10D9 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7CFFEB4126C31054007D10D9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7CFFEB4726C310BB007D10D9 /* Utils */,
+				7CFFEB4626C310B4007D10D9 /* Domain */,
+				7CFFEB4526C310AD007D10D9 /* DI */,
+				7CFFEB4426C310A6007D10D9 /* Data */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7CFFEB4226C3105D007D10D9 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				7CFFEB5326C311C5007D10D9 /* Detail */,
+				7CFFEB5226C311BD007D10D9 /* Home */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		7CFFEB4326C31075007D10D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CFFEB1326C30643007D10D9 /* Assets.xcassets */,
+				7CFFEB1826C30643007D10D9 /* LaunchScreen.storyboard */,
+				7CFFEB1B26C30643007D10D9 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CFFEB4426C310A6007D10D9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7CFFEB4B26C3110C007D10D9 /* Remote */,
+				7CFFEB4A26C31106007D10D9 /* Locale */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7CFFEB4526C310AD007D10D9 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		7CFFEB4626C310B4007D10D9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7CFFEB4926C310E7007D10D9 /* UseCase */,
+				7CFFEB4826C310DF007D10D9 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7CFFEB4726C310BB007D10D9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7CFFEB5126C311A7007D10D9 /* View */,
+				7CFFEB5026C3119E007D10D9 /* Extensions */,
+				7CFFEB4F26C31197007D10D9 /* Mapper */,
+				7CFFEB4E26C3118D007D10D9 /* Network */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7CFFEB4826C310DF007D10D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7CFFEB4926C310E7007D10D9 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		7CFFEB4A26C31106007D10D9 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				7CFFEB4D26C31161007D10D9 /* Entity */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		7CFFEB4B26C3110C007D10D9 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				7CFFEB4C26C31156007D10D9 /* Response */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		7CFFEB4C26C31156007D10D9 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		7CFFEB4D26C31161007D10D9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7CFFEB4E26C3118D007D10D9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7CFFEB4F26C31197007D10D9 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		7CFFEB5026C3119E007D10D9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7CFFEB5126C311A7007D10D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CFFEB5226C311BD007D10D9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7CFFEB5326C311C5007D10D9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
