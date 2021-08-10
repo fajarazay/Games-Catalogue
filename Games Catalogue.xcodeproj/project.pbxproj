@@ -633,7 +633,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Games Catalogue/Preview Content\"";
 				DEVELOPMENT_TEAM = XG8N94C4QN;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Games Catalogue/Info.plist";
+				INFOPLIST_FILE = "Games Catalogue/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -654,7 +654,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Games Catalogue/Preview Content\"";
 				DEVELOPMENT_TEAM = XG8N94C4QN;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Games Catalogue/Info.plist";
+				INFOPLIST_FILE = "Games Catalogue/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
