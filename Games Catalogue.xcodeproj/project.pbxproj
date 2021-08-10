@@ -16,6 +16,7 @@
 		7CFFEB1A26C30643007D10D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CFFEB1826C30643007D10D9 /* LaunchScreen.storyboard */; };
 		7CFFEB2526C30643007D10D9 /* Games_CatalogueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB2426C30643007D10D9 /* Games_CatalogueTests.swift */; };
 		7CFFEB3026C30643007D10D9 /* Games_CatalogueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB2F26C30643007D10D9 /* Games_CatalogueUITests.swift */; };
+		7CFFEB3F26C30F01007D10D9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7CFFEB3E26C30F01007D10D9 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7CFFEB2B26C30643007D10D9 /* Games CatalogueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Games CatalogueUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CFFEB2F26C30643007D10D9 /* Games_CatalogueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games_CatalogueUITests.swift; sourceTree = "<group>"; };
 		7CFFEB3126C30643007D10D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CFFEB3E26C30F01007D10D9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		7CFFEAFE26C30642007D10D9 = {
 			isa = PBXGroup;
 			children = (
+				7CFFEB3E26C30F01007D10D9 /* .swiftlint.yml */,
 				7CFFEB0926C30642007D10D9 /* Games Catalogue */,
 				7CFFEB2326C30643007D10D9 /* Games CatalogueTests */,
 				7CFFEB2E26C30643007D10D9 /* Games CatalogueUITests */,
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CFFEB3F26C30F01007D10D9 /* .swiftlint.yml in Resources */,
 				7CFFEB1A26C30643007D10D9 /* LaunchScreen.storyboard in Resources */,
 				7CFFEB1726C30643007D10D9 /* Preview Assets.xcassets in Resources */,
 				7CFFEB1426C30643007D10D9 /* Assets.xcassets in Resources */,
