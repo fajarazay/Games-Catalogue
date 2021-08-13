@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @ObservedObject var presenter: HomePresenter
     
     var body: some View {
       ZStack {
         if presenter.loadingState {
           VStack {
-            Text("Loading...")
             ActivityIndicator()
           }
         } else {
@@ -24,9 +24,11 @@ struct HomeView: View {
               self.presenter.games,
               id: \.id
             ) { game in
-              ZStack {
-                  GameRowView(game: game)
-              }.padding(8)
+                ZStack {
+                  self.presenter.linkBuilder(for: game) {
+                    GameRowView(game: game)
+                  }.buttonStyle(PlainButtonStyle())
+                }.padding(8)
             }
           }
         }
@@ -40,4 +42,3 @@ struct HomeView: View {
       )
     }
 }
-
