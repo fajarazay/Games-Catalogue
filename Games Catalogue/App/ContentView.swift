@@ -11,12 +11,32 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var homePresenter: HomePresenter
     
+    @State var selected = 0
+    @State var titleBar = "Home"
+    
     var body: some View {
-      NavigationView {
-        HomeView(presenter: homePresenter)
-      }
+        NavigationView {
+            VStack {
+                ZStack {
+                    
+                    VStack {
+                        if self.selected == 0 {
+                            HomeView(presenter: homePresenter)
+                        } else if self.selected == 1 {
+                            FavoriteView()
+                        } else {
+                            AboutView()
+                        }
+                    }
+                    VStack {
+                        Spacer()
+                        FloatingTabBar(selected: self.$selected, titleBar: self.$titleBar)
+                    }
+                }
+            }
+        }
     }
-  }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

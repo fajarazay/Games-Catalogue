@@ -10,13 +10,13 @@ import Foundation
 import Combine
 
 protocol GameRepositoryProtocol {
-
-  func getGames() -> AnyPublisher<[GameModel], Error>
-
+    
+    func getGames() -> AnyPublisher<[GameModel], Error>
+    
 }
 
 final class GameRepository: NSObject {
-
+    
     typealias GameInstance = (LocaleDataSource, RemoteDataSource) -> GameRepository
     
     fileprivate let remote: RemoteDataSource
@@ -33,29 +33,27 @@ final class GameRepository: NSObject {
 }
 
 extension GameRepository: GameRepositoryProtocol {
-
+    
     func getGames() -> AnyPublisher<[GameModel], Error> {
         
-      return self.remote.getGames()
-        .flatMap { result -> AnyPublisher<[GameModel], Error> in
-          if result.isEmpty {
-            return self.locale.getGames()
-              .map { GameMapper.mapGameEntitiesToDomains(input: $0) }
-              .eraseToAnyPublisher()
-
-          } else {
-            
-            return self.remote.getGames()
-              .map { GameMapper.mapGameResponsesToEntities(input: $0) }
-              .flatMap { self.locale.addGames(from: $0) }
-              .filter { $0 }
-              .flatMap { _ in self.locale.getGames()
-                .map { GameMapper.mapGameEntitiesToDomains(input: $0) }
-              }
-              .eraseToAnyPublisher()
-          }
-        }.eraseToAnyPublisher()
+        return self.locale.getGames()
+            .flatMap { result -> AnyPublisher<[GameModel], Error> in
+                
+                if result.isEmpty {
+                    return self.remote.getGames()
+                        .map { GameMapper.mapGameResponsesToEntities(input: $0) }
+                        .flatMap { self.locale.addGames(from: $0) }
+                        .filter { $0 }
+                        .flatMap { _ in self.locale.getGames()
+                            .map { GameMapper.mapGameEntitiesToDomains(input: $0) }
+                        }
+                        .eraseToAnyPublisher()
+                } else {
+                    return self.locale.getGames()
+                        .map { GameMapper.mapGameEntitiesToDomains(input: $0) }
+                        .eraseToAnyPublisher()
+                }
+            }.eraseToAnyPublisher()
         
     }
 }
-

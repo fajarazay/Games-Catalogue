@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8AEB0D69-4E65-4D81-B2E6-E71F6118FB05"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games Catalogue/Core/Data/GameRepository.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getGames()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B1AD4F06-F462-40D4-9767-1AEA4A39C196"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -62,8 +46,8 @@
             filePath = "Games Catalogue/Core/Data/Remote/RemoteDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "getGames()"
             landmarkType = "7">
          </BreakpointContent>
@@ -72,22 +56,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1A59A239-4E09-4934-9A55-0D002AA603B8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Games Catalogue/Core/Data/Remote/RemoteDataSource.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "getGames()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5DDA9F01-8FEF-4ADB-AC35-7CDB84D48019"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -103,6 +71,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5DDA9F01-8FEF-4ADB-AC35-7CDB84D48019"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Data/Remote/RemoteDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getGames()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "3E9DEDC7-0136-4233-B782-A44B392770D6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -110,9 +94,329 @@
             filePath = "Games Catalogue/Core/Data/GameRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "getGames()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B0F1518-0B61-4ABF-8A98-8020B5BE6317"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Utils/Mapper/GameMapper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "mapGameResponsesToEntities(input:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87318610-A58B-4927-B7D9-F2D13E2E327D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Data/Locale/LocalDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "addGames(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8E157D7-5704-4785-B19F-81816B37C249"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Data/Locale/LocalDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getGames()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E3703E0-DD4D-42E0-8C61-68E0F7EAE1C0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Utils/Mapper/GameMapper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "mapGameResponsesToEntities(input:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22F465D2-F472-46C4-87F5-12EF2A26277A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Data/GameRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getGames()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "22F465D2-F472-46C4-87F5-12EF2A26277A - e263713f78189b78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "507">
+               </Location>
+               <Location
+                  uuid = "22F465D2-F472-46C4-87F5-12EF2A26277A - b6b3dd67d61b6cea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Games_Catalogue.GameResponse&gt;) -&gt; Swift.Array&lt;Games_Catalogue.GameEntity&gt; in closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3AEC0A2F-DAB8-4DB3-B406-F4326C97777E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Data/GameRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getGames()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3AEC0A2F-DAB8-4DB3-B406-F4326C97777E - e263713f78189ba7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "755">
+               </Location>
+               <Location
+                  uuid = "3AEC0A2F-DAB8-4DB3-B406-F4326C97777E - 3cfc21b97e47c1ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Bool, Swift.Error&gt; in closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E93EC4F-2D3A-4058-95A2-265FF0FCBA09"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Data/GameRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getGames()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E93EC4F-2D3A-4058-95A2-265FF0FCBA09 - e263713f78189bc6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1024">
+               </Location>
+               <Location
+                  uuid = "9E93EC4F-2D3A-4058-95A2-265FF0FCBA09 - 2176e1a84cf9061b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Bool) -&gt; Swift.Bool in closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "818CB599-6A51-4349-A6CD-DC59A52F3B6B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Data/GameRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getGames()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "818CB599-6A51-4349-A6CD-DC59A52F3B6B - e263713f78189be5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1237">
+               </Location>
+               <Location
+                  uuid = "818CB599-6A51-4349-A6CD-DC59A52F3B6B - 203ba1dfc94ce3c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (Swift.Bool) -&gt; Combine.Publishers.Map&lt;Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameEntity&gt;, Swift.Error&gt;, Swift.Array&lt;Games_Catalogue.GameModel&gt;&gt; in closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7EFB7EC-DBFA-4CDB-BEC6-E92799684622"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/Data/GameRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "getGames()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B7EFB7EC-DBFA-4CDB-BEC6-E92799684622 - 203ba1dfc94ce222"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (Swift.Bool) -&gt; Combine.Publishers.Map&lt;Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameEntity&gt;, Swift.Error&gt;, Swift.Array&lt;Games_Catalogue.GameModel&gt;&gt; in closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "91">
+               </Location>
+               <Location
+                  uuid = "B7EFB7EC-DBFA-4CDB-BEC6-E92799684622 - 867fab3c31964ea5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Swift.Array&lt;Games_Catalogue.GameModel&gt; in closure #4 (Swift.Bool) -&gt; Combine.Publishers.Map&lt;Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameEntity&gt;, Swift.Error&gt;, Swift.Array&lt;Games_Catalogue.GameModel&gt;&gt; in closure #1 (Swift.Array&lt;Games_Catalogue.GameEntity&gt;) -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt; in Games_Catalogue.GameRepository.getGames() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Games_Catalogue.GameModel&gt;, Swift.Error&gt;"
+                  moduleName = "Games Catalogue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quipperindonesia/Fajar/belajar/iOS%20Expert/Games%20Catalogue/Games%20Catalogue/Core/Data/GameRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7AF7E50C-9B72-4298-874D-A5A1AB2FDE4E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games Catalogue/Core/DI/Injection.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "provideDetail(game:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -13,32 +13,32 @@ struct HomeView: View {
     @ObservedObject var presenter: HomePresenter
     
     var body: some View {
-      ZStack {
-        if presenter.loadingState {
-          VStack {
-            ActivityIndicator()
-          }
-        } else {
-          ScrollView(.vertical, showsIndicators: false) {
-            ForEach(
-              self.presenter.games,
-              id: \.id
-            ) { game in
-                ZStack {
-                  self.presenter.linkBuilder(for: game) {
-                    GameRowView(game: game)
-                  }.buttonStyle(PlainButtonStyle())
-                }.padding(8)
-            }
-          }
+        VStack {
+            Group {
+                if presenter.loadingState {
+                    Loader()
+                } else {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        ForEach(
+                            self.presenter.games,
+                            id: \.id
+                        ) { game in
+                            ZStack {
+                                self.presenter.linkBuilder(for: game) {
+                                    GameRowView(game: game)
+                                }
+                            }
+                        }
+                    }
+                }
+            }.onAppear {
+                if self.presenter.games.count == 0 {
+                    self.presenter.getGames()
+                }
+            }.navigationBarTitle(
+                Text("Games Catalogue"),
+                displayMode: .automatic
+            )
         }
-      }.onAppear {
-        if self.presenter.games.count == 0 {
-          self.presenter.getGames()
-        }
-      }.navigationBarTitle(
-        Text("Games Apps"),
-        displayMode: .automatic
-      )
     }
 }

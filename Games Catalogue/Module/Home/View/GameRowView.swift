@@ -10,61 +10,113 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct GameRowView: View {
-
-  var game: GameModel
-  var body: some View {
-    VStack {
-      imageGame
-      content
+    
+    var game: GameModel
+    
+    var body: some View {
+        ZStack(alignment: .leading) {
+            
+            Group {
+                HStack {
+                    WebImage(url: URL(string: game.backgroundImage))
+                        .resizable()
+                        .indicator(.activity)
+                        .transition(.fade(duration: 0.5))
+                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 120, height: 160)
+                        .cornerRadius(8)
+                    
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text(game.name)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .lineLimit(1)
+                        
+                        Spacer()
+                        
+                        Text((self.game.releasedDate).getFormattedDate)
+                            .foregroundColor(Color.gray)
+                            .font(.footnote)
+                        
+                        Spacer()
+                        
+                        Text(game.genres.reduce(
+                                "", { ($0.isEmpty ? "" : $0 + ", ") + $1.name!
+                                }))
+                            .lineLimit(1)
+                            .font(.caption)
+                        
+                        Spacer()
+                        
+                        RatingView(rating: game.rating)
+                        
+                        Spacer()
+                        
+                        ScrollView(.horizontal) {
+                            HStack {
+                                ForEach(game.platforms) { platform in
+                                    ChipsView(text: platform.name ?? "")
+                                }
+                            }.padding(.all, 8)
+                        }.padding(.horizontal, -8)
+                    }.padding(.all, 8)
+                    
+                }.frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
+                
+            }
+        }.overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(ColorsManager.line, lineWidth: 0.5)
+        ).background(
+            RoundedRectangle(
+                cornerRadius: 8
+            ).foregroundColor(Color.white).shadow(
+                color: ColorsManager.line,
+                radius: 8,
+                x: 0,
+                y: 8
+            )
+        ).padding(
+            EdgeInsets(
+                top: 0,
+                leading: 16,
+                bottom: 16,
+                trailing: 16
+            )
+        )
     }
-    .frame(width: UIScreen.main.bounds.width - 32, height: 250)
-    .background(Color.random.opacity(0.3))
-    .cornerRadius(30)
-  }
-
+    
 }
 
 extension GameRowView {
-
-  var imageGame: some View {
-    WebImage(url: URL(string: game.backgroundImage))
-      .resizable()
-      .indicator(.activity)
-      .transition(.fade(duration: 0.5))
-      .scaledToFit()
-      .frame(width: 200)
-      .cornerRadius(30)
-      .padding(.top)
-  }
-  
-  var content: some View {
-    VStack(alignment: .leading, spacing: 10) {
-      Text(game.name)
-        .font(.title)
-        .bold()
     
-    }.padding(
-      EdgeInsets(
-        top: 0,
-        leading: 16,
-        bottom: 16,
-        trailing: 16
-      )
-    )
-  }
-
+    var imageGame: some View {
+        WebImage(url: URL(string: game.backgroundImage))
+            .resizable()
+            .indicator(.activity)
+            .transition(.fade(duration: 0.5))
+            .scaledToFit()
+            .frame(width: 200)
+            .cornerRadius(30)
+            .padding(.top)
+    }
+    
+    var content: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(game.genres.reduce(
+                    "", { ($0.isEmpty ? "" : $0 + ", ") + $1.name!
+                    }))
+                .lineLimit(1)
+                .font(.caption)
+        }.padding(
+            EdgeInsets(
+                top: 0,
+                leading: 16,
+                bottom: 16,
+                trailing: 16
+            )
+        )
+    }
+    
 }
-
-//struct CategoryRow_Previews: PreviewProvider {
-//
-//  static var previews: some View {
-//    let meal = CategoryModel(
-//      id: "1",
-//      title: "Beef",
-//      image: "https://www.themealdb.com/images/category/beef.png",
-//      description: "Beef is the culinary name for meat from cattle, particularly skeletal muscle."
-//    )
-//    return CategoryRow(category: meal)
-//  }
-//
-//}

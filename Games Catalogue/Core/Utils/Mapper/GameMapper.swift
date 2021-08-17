@@ -16,7 +16,15 @@ final class GameMapper {
             return GameModel(
                 id: result.id,
                 name: result.name ?? "Unknown",
-                backgroundImage: result.backgroundImage ?? ""
+                backgroundImage: result.backgroundImage ?? "",
+                releasedDate: result.released ?? "",
+                rating: result.rating ?? 0,
+                genres: result.genres.map { genre in
+                    return GenreModel(id: genre.id, name: genre.name)
+                },
+                platforms: result.platforms.map { platforms in
+                    return PlatformModel(id: platforms.platform?.id, name: platforms.platform?.name)
+                }
             )
         }
     }
@@ -29,6 +37,23 @@ final class GameMapper {
             newGame.id = result.id
             newGame.name = result.name ?? "unknown"
             newGame.image = result.backgroundImage ?? ""
+            newGame.releaseDate = result.released ?? ""
+            newGame.rating = result.rating ?? 0
+            
+            for responseGenre in result.genres {
+                let genreEntity = GenreEntity()
+                genreEntity.id = responseGenre.id ?? 0
+                genreEntity.name = responseGenre.name ?? ""
+                newGame.genres.append(genreEntity)
+            }
+            
+            for responsePlatform in result.platforms {
+                let platformEntity = PlatformEntity()
+                platformEntity.id = responsePlatform.platform?.id ?? 0
+                platformEntity.name = responsePlatform.platform?.name ?? ""
+                newGame.platforms.append(platformEntity)
+            }
+            
             return newGame
         }
     }
@@ -40,7 +65,15 @@ final class GameMapper {
             return GameModel(
                 id: result.id,
                 name: result.name,
-                backgroundImage: result.image
+                backgroundImage: result.image,
+                releasedDate: result.releaseDate,
+                rating: result.rating,
+                genres: result.genres.map { genre in
+                    return GenreModel(id: result.id, name: genre.name)
+                },
+                platforms: result.platforms.map { platforms in
+                    return PlatformModel(id: platforms.id, name: platforms.name)
+                }
             )
         }
     }

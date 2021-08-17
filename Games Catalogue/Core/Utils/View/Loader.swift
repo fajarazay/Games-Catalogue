@@ -9,23 +9,39 @@
 import SwiftUI
 
 struct Loader: View {
-  
-  @State var animate = false
-  
-  var body: some View {
-    VStack {
-      Circle()
-        .stroke(AngularGradient(gradient: .init(colors:[ColorsManager.primary, (ColorsManager.primary)]), center: .center), style: StrokeStyle(lineWidth: 8, lineCap: .round))
-        .frame(width: 45, height: 45)
-        //.rotationEffect(.init(degrees: self.animate ? 90: 0))
-        .onAppear {
-            let baseAnimation = Animation.linear(duration: 3)
-                        let repeated = baseAnimation.repeatForever(autoreverses: true)
-
-                        withAnimation(repeated) {
-                            animate.toggle()
-                        }
-                    }
+    
+    @State var degrees: CGFloat = 0
+    
+    var body: some View {
+        Circle()
+            .trim(from: 0, to: 0.8)
+            .stroke(
+                AngularGradient(
+                    gradient: .init(
+                        colors: [
+                            ColorsManager.primary,
+                            ColorsManager.primaryLight
+                        ]
+                    ),
+                    center: .center),
+                style: StrokeStyle(
+                    lineWidth: 8,
+                    lineCap: .round
+                )
+            )
+            .frame(width: 45, height: 45)
+            .rotationEffect(Angle(degrees: Double(degrees)))
+            .animation(Animation.linear(duration: 0.7).repeatForever(autoreverses: false), value: degrees)
+            .onAppear {
+                DispatchQueue.main.async {
+                    degrees = 360
+                }
+            }
     }
-  }
+}
+
+struct Loader_Previews: PreviewProvider {
+    static var previews: some View {
+        Loader()
+    }
 }

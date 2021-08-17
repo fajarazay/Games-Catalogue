@@ -9,26 +9,34 @@
 import Foundation
 
 struct GamesResponse: Decodable {
-
-  let results: [GameResponse]
-      
-    init(games : [GameResponse]) {
-      self.results = games
+    
+    let results: [GameResponse]
+    
+    init(games: [GameResponse]) {
+        self.results = games
     }
     enum CodingKeys: String, CodingKey {
-      case results = "results"
+        case results
     }
 }
 
 struct GameResponse: Decodable {
-
-  private enum CodingKeys: String, CodingKey {
-    case id = "id"
-    case name = "name"
-    case backgroundImage = "background_image"
-  }
+    
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case backgroundImage = "background_image"
+        case released
+        case rating
+        case genres
+        case platforms
+    }
     let id: Int
     let name: String?
     let backgroundImage: String?
-  
+    let released: String?
+    let rating: Double?
+    let genres: [GenresResponse]
+    let platforms: [PlatformsResponse]
+    
 }
