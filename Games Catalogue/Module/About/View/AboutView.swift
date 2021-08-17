@@ -9,8 +9,17 @@
 import SwiftUI
 
 struct AboutView: View {
+
     var body: some View {
-        Text("Hello, World! About")
+      VStack(spacing: 16) {
+        Image("profile_picture")
+          .resizable()
+          .frame(width: 200, height: 200)
+          .clipShape(Circle())
+        Text("Fajar Septian")
+          .font(.largeTitle)
+      }
+      .navigationBarTitle("Profile", displayMode: .inline)
     }
 }
 
