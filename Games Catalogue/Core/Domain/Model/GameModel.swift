@@ -21,24 +21,3 @@ struct GameModel: Equatable, Identifiable {
     var publishers: [PublisherModel] = []
     var stores: [StoreModel] = []
 }
-
-struct GenreModel: Equatable, Identifiable {
-    let id: Int?
-    let name: String?
-}
-
-struct PlatformModel: Equatable, Identifiable {
-    let id: Int?
-    let name: String?
-}
-
-struct PublisherModel: Equatable, Identifiable {
-    let id: Int?
-    let name: String?
-}
-
-struct StoreModel: Equatable, Identifiable {
-    let id: Int?
-    let name: String?
-    let domain: String?
-}

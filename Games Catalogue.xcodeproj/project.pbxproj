@@ -11,6 +11,10 @@
 		7C01E14326D1035900CC7954 /* PublishersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14226D1035900CC7954 /* PublishersResponse.swift */; };
 		7C01E14526D106C600CC7954 /* StoresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14426D106C600CC7954 /* StoresResponse.swift */; };
 		7C01E14726D107A100CC7954 /* StoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14626D107A100CC7954 /* StoreEntity.swift */; };
+		7C01E14926D1206500CC7954 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14826D1206500CC7954 /* GenreModel.swift */; };
+		7C01E14B26D1209800CC7954 /* PlatformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14A26D1209800CC7954 /* PlatformModel.swift */; };
+		7C01E14D26D120AD00CC7954 /* PublisherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14C26D120AD00CC7954 /* PublisherModel.swift */; };
+		7C01E14F26D120C400CC7954 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14E26D120C400CC7954 /* StoreModel.swift */; };
 		7C23C41A26C6C6D0005D08E4 /* FloatingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C41926C6C6D0005D08E4 /* FloatingTabBar.swift */; };
 		7C23C41D26C6CC02005D08E4 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C41C26C6CC02005D08E4 /* FavoriteView.swift */; };
 		7C23C42126C6E307005D08E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C42026C6E307005D08E4 /* AboutView.swift */; };
@@ -84,6 +88,10 @@
 		7C01E14226D1035900CC7954 /* PublishersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishersResponse.swift; sourceTree = "<group>"; };
 		7C01E14426D106C600CC7954 /* StoresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresResponse.swift; sourceTree = "<group>"; };
 		7C01E14626D107A100CC7954 /* StoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreEntity.swift; sourceTree = "<group>"; };
+		7C01E14826D1206500CC7954 /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
+		7C01E14A26D1209800CC7954 /* PlatformModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformModel.swift; sourceTree = "<group>"; };
+		7C01E14C26D120AD00CC7954 /* PublisherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherModel.swift; sourceTree = "<group>"; };
+		7C01E14E26D120C400CC7954 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		7C23C41926C6C6D0005D08E4 /* FloatingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBar.swift; sourceTree = "<group>"; };
 		7C23C41C26C6CC02005D08E4 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		7C23C42026C6E307005D08E4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -337,6 +345,10 @@
 			isa = PBXGroup;
 			children = (
 				7CFFEB6E26C3254A007D10D9 /* GameModel.swift */,
+				7C01E14826D1206500CC7954 /* GenreModel.swift */,
+				7C01E14A26D1209800CC7954 /* PlatformModel.swift */,
+				7C01E14C26D120AD00CC7954 /* PublisherModel.swift */,
+				7C01E14E26D120C400CC7954 /* StoreModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -679,8 +691,10 @@
 				7CFFEB7F26C32CDD007D10D9 /* GameRowView.swift in Sources */,
 				7C01E14526D106C600CC7954 /* StoresResponse.swift in Sources */,
 				7C9A2A0F26CBA5FF005743B7 /* RatingView.swift in Sources */,
+				7C01E14926D1206500CC7954 /* GenreModel.swift in Sources */,
 				7CFFEB7526C32AB5007D10D9 /* CustomErrorExtension.swift in Sources */,
 				7CFFEB7126C326D6007D10D9 /* GameMapper.swift in Sources */,
+				7C01E14D26D120AD00CC7954 /* PublisherModel.swift in Sources */,
 				7C01E14126D1032200CC7954 /* PublisherEntity.swift in Sources */,
 				7C52B6E026CBEDCC006D2098 /* RoundShapeView.swift in Sources */,
 				7CFFEB6F26C3254A007D10D9 /* GameModel.swift in Sources */,
@@ -691,11 +705,13 @@
 				7CFFEB8F26C352DA007D10D9 /* DetailInteractor.swift in Sources */,
 				7C23C41D26C6CC02005D08E4 /* FavoriteView.swift in Sources */,
 				7C52B6DA26CBE4F0006D2098 /* GenresResponse.swift in Sources */,
+				7C01E14F26D120C400CC7954 /* StoreModel.swift in Sources */,
 				7CFFEB7926C32B67007D10D9 /* HomeRouter.swift in Sources */,
 				7C52B6DE26CBEC9D006D2098 /* ShimmerView.swift in Sources */,
 				7CFFEB9426C36840007D10D9 /* ColorsManager.swift in Sources */,
 				7CFFEB8D26C35015007D10D9 /* DetailPresenter.swift in Sources */,
 				7C9A2A0D26CBA5B2005743B7 /* DateUtil.swift in Sources */,
+				7C01E14B26D1209800CC7954 /* PlatformModel.swift in Sources */,
 				7CFFEB8526C33C20007D10D9 /* GameEntity.swift in Sources */,
 				7CFFEB9126C36803007D10D9 /* Loader.swift in Sources */,
 				7C52B6DC26CBE503006D2098 /* PlatformsResponse.swift in Sources */,
