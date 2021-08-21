@@ -15,8 +15,11 @@ struct GameModel: Equatable, Identifiable {
     var releasedDate: String = ""
     var rating: Double = 0
     var description: String = ""
+    var reviewsCount: Int = 0
     var genres: [GenreModel] = []
     var platforms: [PlatformModel] = []
+    var publishers: [PublisherModel] = []
+    var stores: [StoreModel] = []
 }
 
 struct GenreModel: Equatable, Identifiable {
@@ -27,4 +30,15 @@ struct GenreModel: Equatable, Identifiable {
 struct PlatformModel: Equatable, Identifiable {
     let id: Int?
     let name: String?
+}
+
+struct PublisherModel: Equatable, Identifiable {
+    let id: Int?
+    let name: String?
+}
+
+struct StoreModel: Equatable, Identifiable {
+    let id: Int?
+    let name: String?
+    let domain: String?
 }

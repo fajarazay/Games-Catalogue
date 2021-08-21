@@ -19,14 +19,17 @@ final class GameMapper {
                 backgroundImage: result.backgroundImage ?? "",
                 releasedDate: result.released ?? "",
                 rating: result.rating ?? 0,
-                description: result.description ?? "",
-
-                genres: result.genres.map { genre in
+                reviewsCount: result.reviewsCount ?? 0,
+           
+                genres: result.genres?.map { genre in
                     return GenreModel(id: genre.id, name: genre.name)
-                },
-                platforms: result.platforms.map { platforms in
+                } ?? [] ,
+                platforms: result.platforms?.map { platforms in
                     return PlatformModel(id: platforms.platform?.id, name: platforms.platform?.name)
-                }
+                } ?? [],
+                stores: result.stores?.map { stores in
+                    return StoreModel(id: stores.store?.id, name: stores.store?.name, domain: stores.store?.domain)
+                } ?? []
             )
         }
     }
@@ -41,22 +44,29 @@ final class GameMapper {
             newGame.image = result.backgroundImage ?? ""
             newGame.releaseDate = result.released ?? ""
             newGame.rating = result.rating ?? 0
-            newGame.desc = result.description ?? ""
+            newGame.reviewsCount = result.reviewsCount ?? 0
             
-            for responseGenre in result.genres {
+            for responseGenre in result.genres ?? [] {
                 let genreEntity = GenreEntity()
                 genreEntity.id = responseGenre.id ?? 0
                 genreEntity.name = responseGenre.name ?? ""
                 newGame.genres.append(genreEntity)
             }
             
-            for responsePlatform in result.platforms {
+            for responsePlatform in result.platforms ?? [] {
                 let platformEntity = PlatformEntity()
                 platformEntity.id = responsePlatform.platform?.id ?? 0
                 platformEntity.name = responsePlatform.platform?.name ?? ""
                 newGame.platforms.append(platformEntity)
             }
-            
+
+            for responseStore in result.stores ?? [] {
+                let storeEntity = StoreEntity()
+                storeEntity.id = responseStore.store?.id ?? 0
+                storeEntity.name = responseStore.store?.name ?? ""
+                storeEntity.domain = responseStore.store?.domain ?? ""
+                newGame.stores.append(storeEntity)
+            }
             return newGame
         }
     }
@@ -72,11 +82,18 @@ final class GameMapper {
                 releasedDate: result.releaseDate,
                 rating: result.rating,
                 description: result.desc,
+                reviewsCount: result.reviewsCount,
                 genres: result.genres.map { genre in
-                    return GenreModel(id: result.id, name: genre.name)
+                    return GenreModel(id: genre.id, name: genre.name)
                 },
                 platforms: result.platforms.map { platforms in
                     return PlatformModel(id: platforms.id, name: platforms.name)
+                },
+                publishers: result.publishers.map { publisher in
+                    return PublisherModel(id: publisher.id, name: publisher.name)
+                },
+                stores: result.stores.map { store in
+                    return StoreModel(id: store.id, name: store.name, domain: store.domain)
                 }
             )
         }
@@ -93,19 +110,35 @@ final class GameMapper {
         newGame.releaseDate = result.released ?? ""
         newGame.rating = result.rating ?? 0
         newGame.desc = result.description ?? ""
+        newGame.reviewsCount = result.reviewsCount ?? 0
         
-        for responseGenre in result.genres {
+        for responseGenre in result.genres ?? [] {
             let genreEntity = GenreEntity()
             genreEntity.id = responseGenre.id ?? 0
             genreEntity.name = responseGenre.name ?? ""
             newGame.genres.append(genreEntity)
         }
         
-        for responsePlatform in result.platforms {
+        for responsePlatform in result.platforms ?? [] {
             let platformEntity = PlatformEntity()
             platformEntity.id = responsePlatform.platform?.id ?? 0
             platformEntity.name = responsePlatform.platform?.name ?? ""
             newGame.platforms.append(platformEntity)
+        }
+        
+        for responsePublisher in result.publishers ?? [] {
+            let publisherEntity = PublisherEntity()
+            publisherEntity.id = responsePublisher.id ?? 0
+            publisherEntity.name = responsePublisher.name ?? ""
+            newGame.publishers.append(publisherEntity)
+        }
+        
+        for responseStore in result.stores ?? [] {
+            let storeEntity = StoreEntity()
+            storeEntity.id = responseStore.store?.id ?? 0
+            storeEntity.name = responseStore.store?.name ?? ""
+            storeEntity.domain = responseStore.store?.domain ?? ""
+            newGame.stores.append(storeEntity)
         }
         
         return newGame
@@ -121,11 +154,18 @@ final class GameMapper {
             releasedDate: gameEntity.releaseDate,
             rating: gameEntity.rating,
             description: gameEntity.desc,
+            reviewsCount: gameEntity.reviewsCount,
             genres: gameEntity.genres.map { genre in
                 return GenreModel(id: genre.id, name: genre.name)
             },
             platforms: gameEntity.platforms.map { platforms in
                 return PlatformModel(id: platforms.id, name: platforms.name)
+            },
+            publishers: gameEntity.publishers.map { publisher in
+                return PublisherModel(id: publisher.id, name: publisher.name)
+            },
+            stores: gameEntity.stores.map { store in
+                return StoreModel(id: store.id, name: store.name, domain: store.domain)
             }
         )
     }

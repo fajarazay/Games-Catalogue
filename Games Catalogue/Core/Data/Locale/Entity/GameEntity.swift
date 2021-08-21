@@ -17,9 +17,12 @@ class GameEntity: Object {
     @objc dynamic var releaseDate: String = ""
     @objc dynamic var rating: Double = 0
     @objc dynamic var desc: String = ""
-    
+    @objc dynamic var reviewsCount: Int = 0
+
+    let publishers = List<PublisherEntity>()
     let genres = List<GenreEntity>()
     let platforms = List<PlatformEntity>()
+    let stores = List<StoreEntity>()
     
     override static func primaryKey() -> String? {
         return "id"

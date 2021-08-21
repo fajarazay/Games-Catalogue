@@ -14,11 +14,6 @@ struct DetailView: View {
     @ObservedObject var detailPresenter: DetailPresenter
     @State private var isExpanded: Bool = false
     
-    //    init(_ detailPresenter: DetailPresenter) {
-    //        self.detailPresenter = detailPresenter
-    //        self.detailPresenter.getGameDetail(gameId: self.detailPresenter.game.id)
-    //    }
-    
     var body: some View {
         
         GeometryReader { geometry in
@@ -65,7 +60,7 @@ struct DetailView: View {
                                             Text("Publishers")
                                                 .font(.system(size: 16))
                                                 .fontWeight(.bold)
-                                            Text(detailPresenter.game.genres.reduce(
+                                            Text(detailPresenter.game.publishers.reduce(
                                                     "", { ($0.isEmpty ? "" : $0 + ", ") + $1.name!
                                                     }))
                                                 .font(.system(size: 16))
@@ -108,7 +103,7 @@ struct DetailView: View {
                                                 VStack(alignment: .leading) {
                                                     RatingView(rating: detailPresenter.game.rating)
                                                     HStack {
-                                                        Text("\(detailPresenter.game.rating) reviews")
+                                                        Text("\(detailPresenter.game.reviewsCount) reviews")
                                                             .font(.system(size: 16))
                                                             .foregroundColor(Color.gray)
                                                         Spacer()
@@ -124,9 +119,11 @@ struct DetailView: View {
                                                     .fontWeight(.bold)
                                                     .padding(.bottom, 16)
                                                 
-                                                ForEach(detailPresenter.game.genres) { store in
+                                                ForEach(detailPresenter.game.stores) { store in
                                                     Button {
-                                                        UIApplication.shared.open(URL(string: store.name ?? "")!)
+                                                        if let url = URL(string: "https://www.\(store.domain ?? "")") {
+                                                            UIApplication.shared.open(url)
+                                                        }
                                                     } label: {
                                                         Text(store.name ?? "")
                                                             .foregroundColor(ColorsManager.primary)

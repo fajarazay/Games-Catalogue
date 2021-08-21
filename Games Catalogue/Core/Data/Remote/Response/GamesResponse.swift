@@ -31,14 +31,20 @@ struct GameResponse: Decodable {
         case genres
         case platforms
         case description = "description_raw"
+        case reviewsCount = "reviews_count"
+        case publishers
+        case stores
     }
+    
     let id: Int
     let name: String?
     let backgroundImage: String?
     let released: String?
     let rating: Double?
-    let genres: [GenresResponse]
-    let platforms: [PlatformsResponse]
+    let genres: [GenresResponse]?
+    let platforms: [PlatformsResponse]?
     let description: String?
-    
+    let reviewsCount: Int?
+    let publishers: [PublishersResponse]?
+    let stores: [StoresResponse]?
 }
