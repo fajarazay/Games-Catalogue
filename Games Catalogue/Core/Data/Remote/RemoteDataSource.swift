@@ -13,6 +13,8 @@ import Combine
 protocol RemoteDataSourceProtocol: AnyObject {
     
     func getGames() -> AnyPublisher<[GameResponse], Error>
+    
+    func getDetailGame(gameId: Int) -> AnyPublisher<GameResponse, Error>
 }
 
 final class RemoteDataSource: NSObject {
@@ -24,6 +26,24 @@ final class RemoteDataSource: NSObject {
 }
 
 extension RemoteDataSource: RemoteDataSourceProtocol {
+    func getDetailGame(gameId: Int) -> AnyPublisher<GameResponse, Error> {
+        return Future<GameResponse, Error> { completion in
+            if let url = URL(string: Endpoints.Gets.detailGame(idGame: gameId).url) {
+                print(url)
+                AF.request(url)
+                    .validate()
+                    .responseDecodable(of: GameResponse.self) { response in
+                        switch response.result {
+                        case .success(let value):
+                            completion(.success(value))
+                        case .failure:
+                            completion(.failure(URLError.invalidResponse))
+                        }
+                    }
+            }
+        }.eraseToAnyPublisher()
+    }
+    
     func getGames() -> AnyPublisher<[GameResponse], Error> {
         return Future<[GameResponse], Error> { completion in
             if let url = URL(string: Endpoints.Gets.listGames.url) {

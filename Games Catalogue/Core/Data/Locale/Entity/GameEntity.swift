@@ -16,6 +16,7 @@ class GameEntity: Object {
     @objc dynamic var image: String = ""
     @objc dynamic var releaseDate: String = ""
     @objc dynamic var rating: Double = 0
+    @objc dynamic var desc: String = ""
     
     let genres = List<GenreEntity>()
     let platforms = List<PlatformEntity>()

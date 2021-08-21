@@ -12,6 +12,9 @@ import Combine
 
 protocol LocaleDataSourceProtocol: AnyObject {
     func getGames() -> AnyPublisher<[GameEntity], Error>
+    func getGameDetail(gameId: Int) -> AnyPublisher<GameEntity, Error>
+    
+    func addGameDetail(from game: GameEntity) -> AnyPublisher<Bool, Error>
     func addGames(from games: [GameEntity]) -> AnyPublisher<Bool, Error>
 }
 
@@ -30,6 +33,46 @@ final class LocaleDataSource: NSObject {
 }
 
 extension LocaleDataSource: LocaleDataSourceProtocol {
+    
+    func addGameDetail(from game: GameEntity) -> AnyPublisher<Bool, Error> {
+        return Future<Bool, Error> { completion in
+            if let realm = self.realm {
+                print("User Realm User file location: \(realm.configuration.fileURL!.path)")
+                
+                do {
+                    try realm.write {
+                        realm.add(game, update: .all)
+                        completion(.success(true))
+                    }
+                } catch {
+                    completion(.failure(DatabaseError.requestFailed))
+                }
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func getGameDetail(gameId: Int) -> AnyPublisher<GameEntity, Error> {
+        return Future<GameEntity, Error> { completion in
+            if let realmDB = self.realm {
+                let gameResult: Results<GameEntity> = {
+                    realmDB.objects(GameEntity.self)
+                        .filter("id == \(gameId)")
+                }()
+                
+                guard let game = gameResult.first else {
+                    return
+                }
+                
+                completion(.success(game))
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+            
+        }.eraseToAnyPublisher()
+    }
+    
     func getGames() -> AnyPublisher<[GameEntity], Error> {
         return Future<[GameEntity], Error> { completion in
             if let realm = self.realm {

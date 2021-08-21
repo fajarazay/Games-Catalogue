@@ -19,6 +19,8 @@ final class GameMapper {
                 backgroundImage: result.backgroundImage ?? "",
                 releasedDate: result.released ?? "",
                 rating: result.rating ?? 0,
+                description: result.description ?? "",
+
                 genres: result.genres.map { genre in
                     return GenreModel(id: genre.id, name: genre.name)
                 },
@@ -39,6 +41,7 @@ final class GameMapper {
             newGame.image = result.backgroundImage ?? ""
             newGame.releaseDate = result.released ?? ""
             newGame.rating = result.rating ?? 0
+            newGame.desc = result.description ?? ""
             
             for responseGenre in result.genres {
                 let genreEntity = GenreEntity()
@@ -68,6 +71,7 @@ final class GameMapper {
                 backgroundImage: result.image,
                 releasedDate: result.releaseDate,
                 rating: result.rating,
+                description: result.desc,
                 genres: result.genres.map { genre in
                     return GenreModel(id: result.id, name: genre.name)
                 },
@@ -76,6 +80,54 @@ final class GameMapper {
                 }
             )
         }
+    }
+    
+    static func mapGameDetailResponseToEntity(
+        input gameResponse: GameResponse
+    ) -> GameEntity {
+        let result = gameResponse
+        let newGame = GameEntity()
+        newGame.id = result.id
+        newGame.name = result.name ?? "unknown"
+        newGame.image = result.backgroundImage ?? ""
+        newGame.releaseDate = result.released ?? ""
+        newGame.rating = result.rating ?? 0
+        newGame.desc = result.description ?? ""
+        
+        for responseGenre in result.genres {
+            let genreEntity = GenreEntity()
+            genreEntity.id = responseGenre.id ?? 0
+            genreEntity.name = responseGenre.name ?? ""
+            newGame.genres.append(genreEntity)
+        }
+        
+        for responsePlatform in result.platforms {
+            let platformEntity = PlatformEntity()
+            platformEntity.id = responsePlatform.platform?.id ?? 0
+            platformEntity.name = responsePlatform.platform?.name ?? ""
+            newGame.platforms.append(platformEntity)
+        }
+        
+        return newGame
+    }
+    
+    static func mapGameDetailEntityToDomain(
+        input gameEntity: GameEntity
+    ) -> GameModel {
+        return GameModel(
+            id: gameEntity.id,
+            name: gameEntity.name,
+            backgroundImage: gameEntity.image,
+            releasedDate: gameEntity.releaseDate,
+            rating: gameEntity.rating,
+            description: gameEntity.desc,
+            genres: gameEntity.genres.map { genre in
+                return GenreModel(id: genre.id, name: genre.name)
+            },
+            platforms: gameEntity.platforms.map { platforms in
+                return PlatformModel(id: platforms.id, name: platforms.name)
+            }
+        )
     }
     
 }

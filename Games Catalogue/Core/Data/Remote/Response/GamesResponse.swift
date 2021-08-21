@@ -30,6 +30,7 @@ struct GameResponse: Decodable {
         case rating
         case genres
         case platforms
+        case description = "description_raw"
     }
     let id: Int
     let name: String?
@@ -38,5 +39,6 @@ struct GameResponse: Decodable {
     let rating: Double?
     let genres: [GenresResponse]
     let platforms: [PlatformsResponse]
+    let description: String?
     
 }

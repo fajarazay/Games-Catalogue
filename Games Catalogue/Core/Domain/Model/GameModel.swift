@@ -9,13 +9,14 @@
 import Foundation
 
 struct GameModel: Equatable, Identifiable {
-    let id: Int
-    let name: String
-    let backgroundImage: String
-    let releasedDate: String
-    let rating: Double
-    let genres: [GenreModel]
-    let platforms: [PlatformModel]
+    var id: Int = 0
+    var name: String = ""
+    var backgroundImage: String = ""
+    var releasedDate: String = ""
+    var rating: Double = 0
+    var description: String = ""
+    var genres: [GenreModel] = []
+    var platforms: [PlatformModel] = []
 }
 
 struct GenreModel: Equatable, Identifiable {

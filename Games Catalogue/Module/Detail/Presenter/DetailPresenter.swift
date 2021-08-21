@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class DetailPresenter: ObservableObject {
     
@@ -19,6 +20,26 @@ class DetailPresenter: ObservableObject {
     init(detailUseCase: DetailUseCase) {
         self.detailUseCase = detailUseCase
         game = detailUseCase.getGame()
+    }
+    
+    private var cancellables: Set<AnyCancellable> = []
+    
+    func getGameDetail(gameId: Int) {
+        loadingState = true
+        detailUseCase.getGameDetail(gameId: gameId)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                    print("failure \(completion)")
+                    self.errorMessage = String(describing: completion)
+                case .finished:
+                    self.loadingState = false
+                }
+            }, receiveValue: { games in
+                self.game = games
+            })
+            .store(in: &cancellables)
     }
     
 }

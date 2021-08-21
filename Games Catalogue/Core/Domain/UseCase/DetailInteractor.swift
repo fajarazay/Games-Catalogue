@@ -6,12 +6,13 @@
 //  Copyright ©2021 Fajar Septian. All rights reserved.
 //
 
-import Foundation
+import Combine
 
 protocol DetailUseCase {
     
-    func getGame() -> GameModel
+    func getGameDetail(gameId: Int) -> AnyPublisher<GameModel, Error>
     
+    func getGame() -> GameModel
 }
 
 class DetailInteractor: DetailUseCase {
@@ -25,6 +26,10 @@ class DetailInteractor: DetailUseCase {
     ) {
         self.repository = repository
         self.game = game
+    }
+    
+    func getGameDetail(gameId: Int) -> AnyPublisher<GameModel, Error> {
+        return repository.getGameDetail(gameId: gameId)
     }
     
     func getGame() -> GameModel {

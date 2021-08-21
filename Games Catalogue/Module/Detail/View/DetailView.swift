@@ -10,62 +10,203 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct DetailView: View {
-    @ObservedObject var presenter: DetailPresenter
+    
+    @ObservedObject var detailPresenter: DetailPresenter
+    @State private var isExpanded: Bool = false
+    
+    //    init(_ detailPresenter: DetailPresenter) {
+    //        self.detailPresenter = detailPresenter
+    //        self.detailPresenter.getGameDetail(gameId: self.detailPresenter.game.id)
+    //    }
     
     var body: some View {
-        ZStack {
-            if presenter.loadingState {
-                loadingIndicator
-            } else {
-                ScrollView(.vertical) {
-                    VStack {
-                        imageGame
-                        spacer
-                        content
-                        spacer
-                    }.padding()
-                }
-            }
-        }.navigationBarTitle(Text(self.presenter.game.name), displayMode: .large)
+        
+        GeometryReader { geometry in
+            ScrollView(.vertical, showsIndicators: false) {
+                
+                VStack(alignment: .leading ) {
+                    if self.detailPresenter.loadingState {
+                        Spacer()
+                        Loader()
+                        Spacer()
+                    } else {
+                        if !self.detailPresenter.loadingState {
+                            
+                            VStack {
+                                WebImage(url: URL(string: detailPresenter.game.backgroundImage))
+                                    .resizable()
+                                    .indicator(.activity)
+                                    .transition(.fade(duration: 0.5))
+                                    .scaledToFit()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(height: 320)
+                                
+                                ZStack(alignment: .topTrailing) {
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text(detailPresenter.game.name)
+                                            .font(.title)
+                                            .fontWeight(.bold)
+                                        
+                                        HStack(alignment: .top) {
+                                            Text(detailPresenter.game.genres.reduce(
+                                                    "", { ($0.isEmpty ? "" : $0 + ", ") + $1.name!
+                                                    }))
+                                                .font(.system(size: 14))
+                                                .fontWeight(.bold)
+                                        }.padding(.top, 8)
+                                        
+                                        Text((detailPresenter.game.releasedDate).getFormattedDate)
+                                            .foregroundColor(Color.gray)
+                                            .font(.system(size: 16))
+                                            .padding(.vertical, 16)
+                                        
+                                        HStack(alignment: .center) {
+                                            Text("Publishers")
+                                                .font(.system(size: 16))
+                                                .fontWeight(.bold)
+                                            Text(detailPresenter.game.genres.reduce(
+                                                    "", { ($0.isEmpty ? "" : $0 + ", ") + $1.name!
+                                                    }))
+                                                .font(.system(size: 16))
+                                        }.padding(.bottom, 16)
+                                        
+                                        Text(detailPresenter.game.description)
+                                            .lineLimit(self.isExpanded ? nil : 2)
+                                        
+                                        Button {
+                                            self.isExpanded.toggle()
+                                        } label: {
+                                            Text(self.isExpanded ? "Show Less..." : "Show More...")
+                                                .foregroundColor(hexColor(0x00BFA6))
+                                                .font(.system(size: 16)).bold()
+                                                .padding(.top, 4)
+                                                .background(Color.white)
+                                        }.frame(alignment: .leading)
+                                        
+                                        Group {
+                                            Text("Platforms")
+                                                .font(.system(size: 16))
+                                                .fontWeight(.bold)
+                                                .padding(.top, 24)
+                                            
+                                            VStack(alignment: .leading) {
+                                                generateContent(in: geometry, data: detailPresenter.game.platforms)
+                                                
+                                            }.padding(.all, -8)
+                                        }
+                                        
+                                        VStack(alignment: .leading) {
+                                            Text("Reviews & Ratings")
+                                                .font(.system(size: 16))
+                                                .fontWeight(.bold)
+                                            
+                                            HStack {
+                                                Text(String(detailPresenter.game.rating))
+                                                    .font(.system(size: 54))
+                                                
+                                                VStack(alignment: .leading) {
+                                                    RatingView(rating: detailPresenter.game.rating)
+                                                    HStack {
+                                                        Text("\(detailPresenter.game.rating) reviews")
+                                                            .font(.system(size: 16))
+                                                            .foregroundColor(Color.gray)
+                                                        Spacer()
+                                                    }
+                                                }
+                                            }
+                                        }.padding(.top, 24)
+                                        
+                                        Group {
+                                            VStack(alignment: .leading) {
+                                                Text("Available on ")
+                                                    .font(.system(size: 16))
+                                                    .fontWeight(.bold)
+                                                    .padding(.bottom, 16)
+                                                
+                                                ForEach(detailPresenter.game.genres) { store in
+                                                    Button {
+                                                        UIApplication.shared.open(URL(string: store.name ?? "")!)
+                                                    } label: {
+                                                        Text(store.name ?? "")
+                                                            .foregroundColor(ColorsManager.primary)
+                                                            .font(.system(size: 16))
+                                                            .fontWeight(.bold)
+                                                    }.padding(.bottom, 16)
+                                                }
+                                            }.padding(.top, 16)
+                                        }
+                                        
+                                    }.padding(.horizontal, 16)
+                                    .padding(.top, 32)
+                                    .background(Color.white)
+                                    .clipShape(RoundedShapeView())
+                                    .padding(.top, -48)
+                                    
+                                    Button {
+                                        
+                                    } label: {
+                                        Image(systemName: "heart")
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 24))
+                                            .padding()
+                                            .background(ColorsManager.primary)
+                                            .clipShape(Circle())
+                                            .shadow(color: Color.gray, radius: 12)
+                                        
+                                    }.padding(.top, -72)
+                                    .padding(.horizontal, 32)
+                                }
+                            }
+                            Spacer()
+                        }
+                    }
+                }.frame(minWidth: geometry.size.width, minHeight: geometry.size.height, maxHeight: .infinity)
+            }.frame(minWidth: geometry.size.width, minHeight: geometry.size.height, maxHeight: .infinity)
+            .onAppear {
+                detailPresenter.getGameDetail(gameId: detailPresenter.game.id)
+            }.navigationBarTitle( "\(detailPresenter.game.name)", displayMode: .inline)
+        }
     }
 }
 
-extension DetailView {
-    var spacer: some View {
-        Spacer()
-    }
+private func generateContent(in geometry: GeometryProxy, data: [PlatformModel]) -> some View {
+    var width = CGFloat.zero
+    var height = CGFloat.zero
     
-    var loadingIndicator: some View {
-        VStack {
-            Text("Loading...")
-            ActivityIndicator()
+    return ZStack(alignment: .topLeading) {
+        ForEach(data) { platform in
+            item(for: platform.name ?? "")
+                .padding([.horizontal, .vertical], 8)
+                .alignmentGuide(.leading, computeValue: { value in
+                    if abs(width - value.width) > geometry.size.width {
+                        width = 0
+                        height -= value.height
+                    }
+                    let result = width
+                    if platform == data.last! {
+                        width = 0 // last item
+                    } else {
+                        width -= value.width
+                    }
+                    return result
+                })
+                .alignmentGuide(.top, computeValue: {_ in
+                    let result = height
+                    if platform == data.last! {
+                        height = 0 // last item
+                    }
+                    return result
+                })
         }
     }
-    
-    var imageGame: some View {
-        WebImage(url: URL(string: self.presenter.game.backgroundImage))
-            .resizable()
-            .indicator(.activity)
-            .transition(.fade(duration: 0.5))
-            .scaledToFit()
-            .frame(width: 250.0, height: 250.0, alignment: .center)
-    }
-    
-    var description: some View {
-        Text(self.presenter.game.name)
-            .font(.system(size: 15))
-    }
-    
-    func headerTitle(_ title: String) -> some View {
-        return Text(title)
-            .font(.headline)
-    }
-    
-    var content: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            headerTitle("Description")
-                .padding([.top, .bottom])
-            description
-        }
-    }
+}
+
+func item(for text: String) -> some View {
+    Text(text)
+        .padding(.all, 8)
+        .font(.body)
+        .background(hexColor(0x00BFA6))
+        .foregroundColor(Color.white)
+        .cornerRadius(5)
 }

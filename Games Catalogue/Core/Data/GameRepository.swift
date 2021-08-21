@@ -12,7 +12,7 @@ import Combine
 protocol GameRepositoryProtocol {
     
     func getGames() -> AnyPublisher<[GameModel], Error>
-    
+    func getGameDetail(gameId: Int) -> AnyPublisher<GameModel, Error>
 }
 
 final class GameRepository: NSObject {
@@ -33,6 +33,26 @@ final class GameRepository: NSObject {
 }
 
 extension GameRepository: GameRepositoryProtocol {
+    func getGameDetail(gameId: Int) -> AnyPublisher<GameModel, Error> {
+        return self.locale.getGameDetail(gameId: gameId)
+            .flatMap { result -> AnyPublisher<GameModel, Error> in
+                
+                if result.desc == "" {
+                    return self.remote.getDetailGame(gameId: gameId)
+                        .map { GameMapper.mapGameDetailResponseToEntity(input: $0)}
+                        .flatMap { self.locale.addGameDetail(from: $0) }
+                        .flatMap { _ in self.locale.getGameDetail(gameId: gameId)
+                            .map {GameMapper.mapGameDetailEntityToDomain(input: $0)}
+                        }
+                        
+                        .eraseToAnyPublisher()
+                } else {
+                    return self.locale.getGameDetail(gameId: gameId)
+                        .map { GameMapper.mapGameDetailEntityToDomain(input: $0) }
+                        .eraseToAnyPublisher()
+                }
+            }.eraseToAnyPublisher()
+    }
     
     func getGames() -> AnyPublisher<[GameModel], Error> {
         
@@ -54,6 +74,5 @@ extension GameRepository: GameRepositoryProtocol {
                         .eraseToAnyPublisher()
                 }
             }.eraseToAnyPublisher()
-        
     }
 }
