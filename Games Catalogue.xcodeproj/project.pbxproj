@@ -14,7 +14,6 @@
 		7C23C41A26C6C6D0005D08E4 /* FloatingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C41926C6C6D0005D08E4 /* FloatingTabBar.swift */; };
 		7C23C41D26C6CC02005D08E4 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C41C26C6CC02005D08E4 /* FavoriteView.swift */; };
 		7C23C42126C6E307005D08E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C42026C6E307005D08E4 /* AboutView.swift */; };
-		7C3BDE0426D01255004E14C9 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3BDE0326D01255004E14C9 /* GameDetailModel.swift */; };
 		7C52B6D626CBE3DA006D2098 /* GenreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C52B6D526CBE3DA006D2098 /* GenreEntity.swift */; };
 		7C52B6D826CBE427006D2098 /* PlatformEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C52B6D726CBE427006D2098 /* PlatformEntity.swift */; };
 		7C52B6DA26CBE4F0006D2098 /* GenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C52B6D926CBE4F0006D2098 /* GenresResponse.swift */; };
@@ -53,7 +52,6 @@
 		7CFFEB7B26C32BDC007D10D9 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB7A26C32BDC007D10D9 /* HomeInteractor.swift */; };
 		7CFFEB7D26C32CA2007D10D9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB7C26C32CA2007D10D9 /* HomeView.swift */; };
 		7CFFEB7F26C32CDD007D10D9 /* GameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB7E26C32CDD007D10D9 /* GameRowView.swift */; };
-		7CFFEB8326C32FDE007D10D9 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB8226C32FDE007D10D9 /* ActivityIndicator.swift */; };
 		7CFFEB8526C33C20007D10D9 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB8426C33C20007D10D9 /* GameEntity.swift */; };
 		7CFFEB8726C33DA7007D10D9 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB8626C33DA7007D10D9 /* LocalDataSource.swift */; };
 		7CFFEB8B26C35001007D10D9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB8A26C35001007D10D9 /* DetailView.swift */; };
@@ -89,7 +87,6 @@
 		7C23C41926C6C6D0005D08E4 /* FloatingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBar.swift; sourceTree = "<group>"; };
 		7C23C41C26C6CC02005D08E4 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		7C23C42026C6E307005D08E4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		7C3BDE0326D01255004E14C9 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		7C52B6D526CBE3DA006D2098 /* GenreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreEntity.swift; sourceTree = "<group>"; };
 		7C52B6D726CBE427006D2098 /* PlatformEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformEntity.swift; sourceTree = "<group>"; };
 		7C52B6D926CBE4F0006D2098 /* GenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresResponse.swift; sourceTree = "<group>"; };
@@ -130,7 +127,6 @@
 		7CFFEB7A26C32BDC007D10D9 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		7CFFEB7C26C32CA2007D10D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7CFFEB7E26C32CDD007D10D9 /* GameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRowView.swift; sourceTree = "<group>"; };
-		7CFFEB8226C32FDE007D10D9 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		7CFFEB8426C33C20007D10D9 /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
 		7CFFEB8626C33DA7007D10D9 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		7CFFEB8A26C35001007D10D9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -341,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				7CFFEB6E26C3254A007D10D9 /* GameModel.swift */,
-				7C3BDE0326D01255004E14C9 /* GameDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,7 +421,6 @@
 		7CFFEB5126C311A7007D10D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7CFFEB8226C32FDE007D10D9 /* ActivityIndicator.swift */,
 				7CFFEB9026C36803007D10D9 /* Loader.swift */,
 				7C23C41926C6C6D0005D08E4 /* FloatingTabBar.swift */,
 				7C9A2A0E26CBA5FF005743B7 /* RatingView.swift */,
@@ -673,7 +667,6 @@
 				7CFFEB0B26C30642007D10D9 /* AppDelegate.swift in Sources */,
 				7C01E14326D1035900CC7954 /* PublishersResponse.swift in Sources */,
 				7CFFEB6D26C324E7007D10D9 /* GameRepository.swift in Sources */,
-				7CFFEB8326C32FDE007D10D9 /* ActivityIndicator.swift in Sources */,
 				7C23C42126C6E307005D08E4 /* AboutView.swift in Sources */,
 				7CFFEB8726C33DA7007D10D9 /* LocalDataSource.swift in Sources */,
 				7C9A2A1126CBA634005743B7 /* UIColor.swift in Sources */,
@@ -686,7 +679,6 @@
 				7CFFEB7F26C32CDD007D10D9 /* GameRowView.swift in Sources */,
 				7C01E14526D106C600CC7954 /* StoresResponse.swift in Sources */,
 				7C9A2A0F26CBA5FF005743B7 /* RatingView.swift in Sources */,
-				7C3BDE0426D01255004E14C9 /* GameDetailModel.swift in Sources */,
 				7CFFEB7526C32AB5007D10D9 /* CustomErrorExtension.swift in Sources */,
 				7CFFEB7126C326D6007D10D9 /* GameMapper.swift in Sources */,
 				7C01E14126D1032200CC7954 /* PublisherEntity.swift in Sources */,
