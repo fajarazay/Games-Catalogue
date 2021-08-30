@@ -13,6 +13,11 @@ protocol DetailUseCase {
     func getGameDetail(gameId: Int) -> AnyPublisher<GameModel, Error>
     
     func getGame() -> GameModel
+    
+    func setFavorite(game: GameModel) -> AnyPublisher<Bool, Error>
+    
+    func setUnfavorite(game: GameModel) -> AnyPublisher<Bool, Error>
+
 }
 
 class DetailInteractor: DetailUseCase {
@@ -34,6 +39,14 @@ class DetailInteractor: DetailUseCase {
     
     func getGame() -> GameModel {
         return game
+    }
+    
+    func setFavorite(game: GameModel) -> AnyPublisher<Bool, Error> {
+        return repository.setFavorite(game: game)
+    }
+    
+    func setUnfavorite(game: GameModel) -> AnyPublisher<Bool, Error> {
+        return repository.setUnfavorite(game: game)
     }
     
 }

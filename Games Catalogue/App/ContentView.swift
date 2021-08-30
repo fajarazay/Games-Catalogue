@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var homePresenter: HomePresenter
+    @EnvironmentObject var favoritePresenter: FavoritePresenter
     
     @State var selected = 0
     @State var titleBar = "Home"
@@ -23,7 +24,7 @@ struct ContentView: View {
                         if self.selected == 0 {
                             HomeView(presenter: homePresenter)
                         } else if self.selected == 1 {
-                            FavoriteView()
+                            FavoriteView(presenter: favoritePresenter)
                         } else {
                             AboutView()
                         }

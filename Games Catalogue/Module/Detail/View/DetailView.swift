@@ -13,6 +13,7 @@ struct DetailView: View {
     
     @ObservedObject var detailPresenter: DetailPresenter
     @State private var isExpanded: Bool = false
+    @State private var isFlagFav: Bool = false
     
     var body: some View {
         
@@ -121,7 +122,9 @@ struct DetailView: View {
                                                 
                                                 ForEach(detailPresenter.game.stores) { store in
                                                     Button {
-                                                        if let url = URL(string: "https://www.\(store.domain ?? "")") {
+                                                        let urlDomain = String(describing: store.domain)
+                                                        if let url = URL(
+                                                            string: "\(Constants.prefixUrlDomain)\(urlDomain)") {
                                                             UIApplication.shared.open(url)
                                                         }
                                                     } label: {
@@ -141,15 +144,19 @@ struct DetailView: View {
                                     .padding(.top, -48)
                                     
                                     Button {
-                                        
-                                    } label: {
-                                        Image(systemName: "heart")
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 24))
-                                            .padding()
-                                            .background(ColorsManager.primary)
-                                            .clipShape(Circle())
-                                            .shadow(color: Color.gray, radius: 12)
+                                        if detailPresenter.isFavoriteGame {
+                                            detailPresenter.setUnfavorite(game: detailPresenter.game)
+                                        } else {
+                                            detailPresenter.setFavorite(game: detailPresenter.game)
+                                        }
+                                    } label: { Image(systemName: detailPresenter.isFavoriteGame
+                                                        ? "heart.fill" : "heart")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 24))
+                                        .padding()
+                                        .background(ColorsManager.primary)
+                                        .clipShape(Circle())
+                                        .shadow(color: Color.gray, radius: 12)
                                         
                                     }.padding(.top, -72)
                                     .padding(.horizontal, 32)
@@ -160,10 +167,9 @@ struct DetailView: View {
                     }
                 }.frame(minWidth: geometry.size.width, minHeight: geometry.size.height, maxHeight: .infinity)
             }.frame(minWidth: geometry.size.width, minHeight: geometry.size.height, maxHeight: .infinity)
-            .onAppear {
-                detailPresenter.getGameDetail(gameId: detailPresenter.game.id)
-            }.navigationBarTitle( "\(detailPresenter.game.name)", displayMode: .inline)
-        }
+        }.onAppear {
+            detailPresenter.getGameDetail(gameId: detailPresenter.game.id)
+        }.navigationBarTitle( "\(detailPresenter.game.name)", displayMode: .inline)
     }
 }
 

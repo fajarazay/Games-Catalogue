@@ -83,6 +83,7 @@ final class GameMapper {
                 rating: result.rating,
                 description: result.desc,
                 reviewsCount: result.reviewsCount,
+                isFavorite: result.isFavorite,
                 genres: result.genres.map { genre in
                     return GenreModel(id: genre.id, name: genre.name)
                 },
@@ -155,6 +156,7 @@ final class GameMapper {
             rating: gameEntity.rating,
             description: gameEntity.desc,
             reviewsCount: gameEntity.reviewsCount,
+            isFavorite: gameEntity.isFavorite,
             genres: gameEntity.genres.map { genre in
                 return GenreModel(id: genre.id, name: genre.name)
             },
@@ -170,4 +172,61 @@ final class GameMapper {
         )
     }
     
+    static func mapGameDomainToEntity(
+        input gameModel: GameModel
+    ) -> GameEntity {
+        let newGame = GameEntity()
+        newGame.id = gameModel.id
+        newGame.name = gameModel.name
+        newGame.image = gameModel.backgroundImage
+        newGame.releaseDate = gameModel.releasedDate
+        newGame.rating = gameModel.rating
+        newGame.desc = gameModel.description
+        newGame.reviewsCount = gameModel.reviewsCount
+        newGame.isFavorite = gameModel.isFavorite
+        
+        for genre in gameModel.genres {
+            let genreEntity = GenreEntity()
+            genreEntity.id = genre.id ?? 0
+            genreEntity.name = genre.name ?? ""
+            newGame.genres.append(genreEntity)
+        }
+        
+        for platform in gameModel.platforms {
+            let platformEntity = PlatformEntity()
+            platformEntity.id = platform.id ?? 0
+            platformEntity.name = platform.name ?? ""
+            newGame.platforms.append(platformEntity)
+        }
+
+        for store in gameModel.stores {
+            let storeEntity = StoreEntity()
+            storeEntity.id = store.id ?? 0
+            storeEntity.name = store.name ?? ""
+            storeEntity.domain = store.domain ?? ""
+            newGame.stores.append(storeEntity)
+        }
+        return newGame
+//            id: gameModel.id,
+//            name: gameModel.name,
+//            backgroundImage: gameModel.backgroundImage,
+//            r: gameModel.releasedDate,
+//            rating: gameModel.rating,
+//            desc: gameModel.description,
+//            reviewsCount: gameModel.reviewsCount,
+//            isFavorite: gameModel.isFavorite,
+//            genres: gameModel.genres.map { genre in
+//                return GenreModel(id: genre.id, name: genre.name)
+//            },
+//            platforms: gameModel.platforms.map { platforms in
+//                return PlatformModel(id: platforms.id, name: platforms.name)
+//            },
+//            publishers: gameModel.publishers.map { publisher in
+//                return PublisherModel(id: publisher.id, name: publisher.name)
+//            },
+//            stores: gameModel.stores.map { store in
+//                return StoreModel(id: store.id, name: store.name, domain: store.domain)
+//            }
+//        )
+    }
 }

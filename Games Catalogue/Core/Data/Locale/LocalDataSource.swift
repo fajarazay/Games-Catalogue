@@ -12,10 +12,15 @@ import Combine
 
 protocol LocaleDataSourceProtocol: AnyObject {
     func getGames() -> AnyPublisher<[GameEntity], Error>
+    func getFavGames() -> AnyPublisher<[GameEntity], Error>
+    
     func getGameDetail(gameId: Int) -> AnyPublisher<GameEntity, Error>
     
     func addGameDetail(from game: GameEntity) -> AnyPublisher<Bool, Error>
     func addGames(from games: [GameEntity]) -> AnyPublisher<Bool, Error>
+    
+    func setFavorite(from games: GameEntity) -> AnyPublisher<Bool, Error>
+    func setUnfavorite(from games: GameEntity) -> AnyPublisher<Bool, Error>
 }
 
 final class LocaleDataSource: NSObject {
@@ -33,11 +38,66 @@ final class LocaleDataSource: NSObject {
 }
 
 extension LocaleDataSource: LocaleDataSourceProtocol {
+    func getFavGames() -> AnyPublisher<[GameEntity], Error> {
+        return Future<[GameEntity], Error> { completion in
+            if let realm = self.realm {
+                print("User Realm file location: \(realm.configuration.fileURL!.path)")
+                
+                let games: Results<GameEntity> = {
+                    realm.objects(GameEntity.self)
+                        .filter("isFavorite == true")
+                }()
+                completion(.success(games.toArray(ofType: GameEntity.self)))
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func setFavorite(from game: GameEntity) -> AnyPublisher<Bool, Error> {
+        return Future<Bool, Error> { completion in
+            if let realm = self.realm {
+                print("User Realm file location: \(realm.configuration.fileURL!.path)")
+                
+                do {
+                    try realm.write {
+                        game.isFavorite = true
+                        realm.add(game, update: .all)
+                        completion(.success(true))
+                    }
+                } catch {
+                    completion(.failure(DatabaseError.requestFailed))
+                }
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func setUnfavorite(from game: GameEntity) -> AnyPublisher<Bool, Error> {
+        return Future<Bool, Error> { completion in
+            if let realm = self.realm {
+                print("User Realm file location: \(realm.configuration.fileURL!.path)")
+                
+                do {
+                    try realm.write {
+                        game.isFavorite = false
+                        realm.add(game, update: .all)
+                        completion(.success(true))
+                    }
+                } catch {
+                    completion(.failure(DatabaseError.requestFailed))
+                }
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }.eraseToAnyPublisher()
+    }
     
     func addGameDetail(from game: GameEntity) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
-                print("User Realm User file location: \(realm.configuration.fileURL!.path)")
+                print("User Realm file location: \(realm.configuration.fileURL!.path)")
                 
                 do {
                     try realm.write {
@@ -76,11 +136,10 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     func getGames() -> AnyPublisher<[GameEntity], Error> {
         return Future<[GameEntity], Error> { completion in
             if let realm = self.realm {
-                print("User Realm User file location: \(realm.configuration.fileURL!.path)")
+                print("User Realm file location: \(realm.configuration.fileURL!.path)")
                 
                 let games: Results<GameEntity> = {
                     realm.objects(GameEntity.self)
-                        .sorted(byKeyPath: "id", ascending: true)
                 }()
                 completion(.success(games.toArray(ofType: GameEntity.self)))
             } else {
@@ -94,7 +153,7 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     ) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
-                print("User Realm User file location: \(realm.configuration.fileURL!.path)")
+                print("User Realm file location: \(realm.configuration.fileURL!.path)")
                 
                 do {
                     try realm.write {

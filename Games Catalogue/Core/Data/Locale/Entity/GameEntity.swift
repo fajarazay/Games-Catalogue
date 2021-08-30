@@ -18,7 +18,8 @@ class GameEntity: Object {
     @objc dynamic var rating: Double = 0
     @objc dynamic var desc: String = ""
     @objc dynamic var reviewsCount: Int = 0
-
+    @objc dynamic var isFavorite: Bool = false
+    
     let publishers = List<PublisherEntity>()
     let genres = List<GenreEntity>()
     let platforms = List<PlatformEntity>()

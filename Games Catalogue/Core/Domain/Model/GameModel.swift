@@ -16,6 +16,7 @@ struct GameModel: Equatable, Identifiable {
     var rating: Double = 0
     var description: String = ""
     var reviewsCount: Int = 0
+    var isFavorite: Bool = false
     var genres: [GenreModel] = []
     var platforms: [PlatformModel] = []
     var publishers: [PublisherModel] = []
