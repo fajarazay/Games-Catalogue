@@ -15,6 +15,7 @@
 		7C01E14B26D1209800CC7954 /* PlatformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14A26D1209800CC7954 /* PlatformModel.swift */; };
 		7C01E14D26D120AD00CC7954 /* PublisherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14C26D120AD00CC7954 /* PublisherModel.swift */; };
 		7C01E14F26D120C400CC7954 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14E26D120C400CC7954 /* StoreModel.swift */; };
+		7C0E6DA226DFD1A90035B591 /* Cleanse in Frameworks */ = {isa = PBXBuildFile; productRef = 7C0E6DA126DFD1A90035B591 /* Cleanse */; };
 		7C23C41A26C6C6D0005D08E4 /* FloatingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C41926C6C6D0005D08E4 /* FloatingTabBar.swift */; };
 		7C23C41D26C6CC02005D08E4 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C41C26C6CC02005D08E4 /* FavoriteView.swift */; };
 		7C23C42126C6E307005D08E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C42026C6E307005D08E4 /* AboutView.swift */; };
@@ -161,6 +162,7 @@
 				7CFFEB6526C31AFC007D10D9 /* RealmSwift in Frameworks */,
 				7CFFEB6326C31AFC007D10D9 /* Realm in Frameworks */,
 				7CFFEB5D26C31A5B007D10D9 /* SDWebImageSwiftUI in Frameworks */,
+				7C0E6DA226DFD1A90035B591 /* Cleanse in Frameworks */,
 				7CFFEB6026C31A8C007D10D9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +579,7 @@
 				7CFFEB5F26C31A8C007D10D9 /* Alamofire */,
 				7CFFEB6226C31AFC007D10D9 /* Realm */,
 				7CFFEB6426C31AFC007D10D9 /* RealmSwift */,
+				7C0E6DA126DFD1A90035B591 /* Cleanse */,
 			);
 			productName = "Games Catalogue";
 			productReference = 7CFFEB0726C30642007D10D9 /* Games Catalogue.app */;
@@ -653,6 +656,7 @@
 				7CFFEB5B26C31A5B007D10D9 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				7CFFEB5E26C31A8C007D10D9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7CFFEB6126C31AFC007D10D9 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				7C0E6DA026DFD1A90035B591 /* XCRemoteSwiftPackageReference "Cleanse" */,
 			);
 			productRefGroup = 7CFFEB0826C30642007D10D9 /* Products */;
 			projectDirPath = "";
@@ -1099,6 +1103,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7C0E6DA026DFD1A90035B591 /* XCRemoteSwiftPackageReference "Cleanse" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/square/Cleanse";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.6;
+			};
+		};
 		7CFFEB5B26C31A5B007D10D9 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
@@ -1126,6 +1138,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7C0E6DA126DFD1A90035B591 /* Cleanse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C0E6DA026DFD1A90035B591 /* XCRemoteSwiftPackageReference "Cleanse" */;
+			productName = Cleanse;
+		};
 		7CFFEB5C26C31A5B007D10D9 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7CFFEB5B26C31A5B007D10D9 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
