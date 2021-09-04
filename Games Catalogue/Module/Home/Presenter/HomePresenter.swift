@@ -8,18 +8,20 @@
 
 import SwiftUI
 import Combine
+import Cleanse
 
 class HomePresenter: ObservableObject {
     
-    private let router = HomeRouter()
+    private let router: HomeRouter
     private let homeUseCase: HomeUseCase
     
     @Published var games: [GameModel] = []
     @Published var errorMessage: String = ""
     @Published var loadingState: Bool = false
     
-    init(homeUseCase: HomeUseCase) {
+    init(homeUseCase: HomeUseCase, homeRouter: HomeRouter) {
         self.homeUseCase = homeUseCase
+        self.router = homeRouter
     }
     
     private var cancellables: Set<AnyCancellable> = []
@@ -52,4 +54,14 @@ class HomePresenter: ObservableObject {
             destination: router.makeDetailView(for: game)) { content() }
     }
     
+}
+
+extension HomePresenter {
+    struct Module: Cleanse.Module {
+        static func configure(binder: Binder<Singleton>) {
+            binder.include(module: HomeInteractor.Module.self)
+            binder.include(module: HomeRouter.Module.self)
+            binder.bind(HomePresenter.self).to(factory: HomePresenter.init)
+        }
+    }
 }

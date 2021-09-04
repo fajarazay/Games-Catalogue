@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import Cleanse
 
 protocol GameRepositoryProtocol {
     
@@ -91,5 +92,16 @@ extension GameRepository: GameRepositoryProtocol {
                         .eraseToAnyPublisher()
                 }
             }.eraseToAnyPublisher()
+    }
+}
+
+extension GameRepository {
+    struct Module: Cleanse.Module {
+        static func configure(binder: Binder<Singleton>) {
+            binder.include(module: LocaleDataSource.Module.self)
+            binder.include(module: RemoteDataSource.Module.self)
+            binder.bind(GameRepositoryProtocol.self).to(factory: GameRepository.init)
+            binder.bind(GameRepository.self).to(factory: GameRepository.init)
+        }
     }
 }

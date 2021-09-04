@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import Combine
+import Cleanse
 
 protocol LocaleDataSourceProtocol: AnyObject {
     func getGames() -> AnyPublisher<[GameEntity], Error>
@@ -184,4 +185,13 @@ extension Results {
         return array
     }
     
+}
+
+extension LocaleDataSource {
+    struct Module: Cleanse.Module {
+        static func configure(binder: Binder<Singleton>) {
+            binder.bind(LocaleDataSource.self).to { () -> LocaleDataSource in
+                LocaleDataSource.init(realm: try? Realm()) }
+        }
+    }
 }

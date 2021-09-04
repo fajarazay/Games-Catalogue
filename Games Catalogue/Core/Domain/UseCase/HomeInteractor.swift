@@ -7,6 +7,7 @@
 //
 
 import Combine
+import Cleanse
 
 protocol HomeUseCase {
     
@@ -26,4 +27,14 @@ class HomeInteractor: HomeUseCase {
         return repository.getGames()
     }
     
+}
+
+extension HomeInteractor {
+    struct Module: Cleanse.Module {
+        static func configure(binder: Binder<Singleton>) {
+            binder.include(module: GameRepository.Module.self)
+            binder.bind(HomeUseCase.self).to(factory: HomeInteractor.init)
+            binder.bind(HomeInteractor.self).to(factory: HomeInteractor.init)
+        }
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import Combine
+import Cleanse
 
 protocol DetailUseCase {
     
@@ -27,10 +28,10 @@ class DetailInteractor: DetailUseCase {
     
     required init(
         repository: GameRepositoryProtocol,
-        game: GameModel
+        game: Assisted<GameModel>
     ) {
         self.repository = repository
-        self.game = game
+        self.game = game.get()
     }
     
     func getGameDetail(gameId: Int) -> AnyPublisher<GameModel, Error> {
@@ -49,4 +50,21 @@ class DetailInteractor: DetailUseCase {
         return repository.setUnfavorite(game: game)
     }
     
+}
+
+extension DetailInteractor {
+    struct AssistedSeed: AssistedFactory {
+        typealias Seed = GameModel
+        typealias Element = DetailUseCase
+    }
+    struct Module: Cleanse.Module {
+        public static func configure(binder: UnscopedBinder) {
+            binder
+                .bindFactory(DetailUseCase.self)
+                .with(AssistedSeed.self)
+                .to { (seed: Assisted<GameModel>, repository: Provider<GameRepository>) in
+                    return DetailInteractor(repository: repository.get(), game: seed)
+                }
+        }
+    }
 }

@@ -8,18 +8,20 @@
 
 import SwiftUI
 import Combine
+import Cleanse
 
 class FavoritePresenter: ObservableObject {
     
-    private let router = FavoriteRouter()
+    private let router: FavoriteRouter
     private let favoriteUseCase: FavoriteUseCase
     
     @Published var games: [GameModel] = []
     @Published var errorMessage: String = ""
     @Published var loadingState: Bool = true
     
-    init(favoriteUseCase: FavoriteUseCase) {
+    init(favoriteUseCase: FavoriteUseCase, favoriteRouter: FavoriteRouter) {
         self.favoriteUseCase = favoriteUseCase
+        self.router = favoriteRouter
     }
     
     private var cancellables: Set<AnyCancellable> = []
@@ -50,4 +52,14 @@ class FavoritePresenter: ObservableObject {
             destination: router.makeDetailView(for: game)) { content() }
     }
     
+}
+
+extension FavoritePresenter {
+    struct Module: Cleanse.Module {
+        static func configure(binder: Binder<Singleton>) {
+            binder.include(module: FavoriteInteractor.Module.self)
+            binder.include(module: FavoriteRouter.Module.self)
+            binder.bind(FavoritePresenter.self).to(factory: FavoritePresenter.init)
+        }
+    }
 }

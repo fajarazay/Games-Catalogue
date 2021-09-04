@@ -7,13 +7,27 @@
 //
 
 import SwiftUI
+import Cleanse
 
 class HomeRouter {
     
-    func makeDetailView(for game: GameModel) -> some View {
-        let detailUseCase = Injection.init().provideDetail(game: game)
-        let presenter = DetailPresenter(detailUseCase: detailUseCase)
-        return DetailView(detailPresenter: presenter)
+    let detailUseCase: Factory<DetailInteractor.AssistedSeed>
+
+    init(detailUseCase: Factory<DetailInteractor.AssistedSeed>) {
+        self.detailUseCase = detailUseCase
     }
     
+    func makeDetailView(for game: GameModel) -> some View {
+        let presenter = DetailPresenter(detailUseCase: detailUseCase.build(game))
+        return DetailView(detailPresenter: presenter)
+    }
+}
+
+extension HomeRouter {
+    struct Module: Cleanse.Module {
+        static func configure(binder: Binder<Singleton>) {
+            binder.include(module: DetailInteractor.Module.self)
+            binder.bind(HomeRouter.self).to(factory: HomeRouter.init)
+        }
+    }
 }

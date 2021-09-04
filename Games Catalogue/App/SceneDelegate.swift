@@ -7,35 +7,26 @@
 //
 
 import UIKit
-import SwiftUI
+import Cleanse
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-  
-  var window: UIWindow?
-  
-  func scene(
-    _ scene: UIScene,
-    willConnectTo session: UISceneSession,
-    options connectionOptions: UIScene.ConnectionOptions
-  ) {
-    let homeUseCase = Injection.init().provideHome()
-
-    let homePresenter = HomePresenter(homeUseCase: homeUseCase)
-
-    let favoriteUseCase = Injection.init().provideFavorite()
-
-    let favoritePresenter = FavoritePresenter(favoriteUseCase: favoriteUseCase)
     
-    let contentView = ContentView()
-     .environmentObject(homePresenter)
-     .environmentObject(favoritePresenter)
-
-    if let windowScene = scene as? UIWindowScene {
-      let window = UIWindow(windowScene: windowScene)
-      window.rootViewController = UIHostingController(rootView: contentView)
-      self.window = window
-      window.makeKeyAndVisible()
+    var window: UIWindow?
+    
+    func scene(
+        _ scene: UIScene,
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
+        let propertyInjector = try? ComponentFactory.of(AppComponent.self).build((scene))
+        propertyInjector?.injectProperties(into: self)
+        precondition(window != nil)
+        window!.makeKeyAndVisible()
     }
-  }
-  
+}
+
+extension SceneDelegate {
+    func injectProperties(_ window: UIWindow) {
+        self.window = window
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Cleanse
 
 struct ContentView: View {
     @EnvironmentObject var homePresenter: HomePresenter

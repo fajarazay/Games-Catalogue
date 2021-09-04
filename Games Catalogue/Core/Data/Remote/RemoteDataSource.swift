@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import Combine
+import Cleanse
 
 protocol RemoteDataSourceProtocol: AnyObject {
     
@@ -60,5 +61,13 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
                     }
             }
         }.eraseToAnyPublisher()
+    }
+}
+
+extension RemoteDataSource {
+    struct Module: Cleanse.Module {
+        static func configure(binder: Binder<Singleton>) {
+            binder.bind(RemoteDataSource.self).to(factory: RemoteDataSource.init)
+        }
     }
 }

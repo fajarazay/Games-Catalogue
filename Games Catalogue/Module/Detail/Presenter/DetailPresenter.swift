@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import Cleanse
 
 class DetailPresenter: ObservableObject {
     
@@ -76,5 +77,14 @@ class DetailPresenter: ObservableObject {
                 self.isFavoriteGame = !value
             })
             .store(in: &cancellables)
+    }
+}
+
+extension DetailPresenter {
+    struct Module: Cleanse.Module {
+        static func configure(binder: Binder<Singleton>) {
+            binder.include(module: DetailInteractor.Module.self)
+            binder.bind(DetailPresenter.self).to(factory: DetailPresenter.init)
+        }
     }
 }
