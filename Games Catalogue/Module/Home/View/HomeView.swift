@@ -18,27 +18,31 @@ struct HomeView: View {
                 if presenter.loadingState {
                     Loader()
                 } else {
-                    ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(
-                            self.presenter.games,
-                            id: \.id
-                        ) { game in
-                            ZStack {
-                                self.presenter.linkBuilder(for: game) {
-                                    GameRowView(game: game)
+                    if presenter.errorMessage.isEmpty {
+                        ScrollView(.vertical, showsIndicators: false) {
+                            ForEach(
+                                self.presenter.games,
+                                id: \.id
+                            ) { game in
+                                ZStack {
+                                    self.presenter.linkBuilder(for: game) {
+                                        GameRowView(game: game)
+                                    }
                                 }
                             }
                         }
+                    } else {
+                        ErrorView(homePresenter: presenter)
                     }
                 }
-            }.onAppear {
-                if self.presenter.games.count == 0 {
-                    self.presenter.getGames()
-                }
-            }.navigationBarTitle(
-                Text("Games Catalogue"),
-                displayMode: .automatic
-            )
-        }
+            }
+        }.onAppear {
+            if self.presenter.games.count == 0 {
+                self.presenter.getGames()
+            }
+        }.navigationBarTitle(
+            Text("Games Catalogue"),
+            displayMode: .automatic
+        )
     }
 }

@@ -18,14 +18,18 @@ struct FavoriteView: View {
                 if presenter.loadingState {
                     Loader()
                 } else {
-                    ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(
-                            self.presenter.games,
-                            id: \.id
-                        ) { game in
-                            ZStack {
-                                self.presenter.linkBuilder(for: game) {
-                                    GameRowView(game: game)
+                    if presenter.games.isEmpty {
+                        EmptyListView()
+                    } else {
+                        ScrollView(.vertical, showsIndicators: false) {
+                            ForEach(
+                                self.presenter.games,
+                                id: \.id
+                            ) { game in
+                                ZStack {
+                                    self.presenter.linkBuilder(for: game) {
+                                        GameRowView(game: game)
+                                    }
                                 }
                             }
                         }

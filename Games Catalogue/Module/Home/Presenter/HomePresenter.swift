@@ -26,6 +26,7 @@ class HomePresenter: ObservableObject {
     
     func getGames() {
         loadingState = true
+        errorMessage = ""
         homeUseCase.getGames()
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
@@ -33,6 +34,7 @@ class HomePresenter: ObservableObject {
                 case .failure:
                     print(completion)
                     self.errorMessage = String(describing: completion)
+                    self.loadingState = false
                 case .finished:
                     self.loadingState = false
                 }
