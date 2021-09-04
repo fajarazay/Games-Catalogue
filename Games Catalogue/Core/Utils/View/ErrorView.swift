@@ -28,10 +28,9 @@ struct ErrorView: View {
                 .multilineTextAlignment(.center)
                 .font(.system(size: 16))
             
-            Button(action: {
-                print("retry")
+            Button {
                 homePresenter.getGames()
-            }) {
+            } label: {
                 HStack {
                     Text("RETRY")
                         .fontWeight(.semibold)
