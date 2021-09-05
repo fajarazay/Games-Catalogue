@@ -42,7 +42,6 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     func getFavGames() -> AnyPublisher<[GameEntity], Error> {
         return Future<[GameEntity], Error> { completion in
             if let realm = self.realm {
-                print("User Realm file location: \(realm.configuration.fileURL!.path)")
                 
                 let games: Results<GameEntity> = {
                     realm.objects(GameEntity.self)
@@ -58,7 +57,6 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     func setFavorite(from game: GameEntity) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
-                print("User Realm file location: \(realm.configuration.fileURL!.path)")
                 
                 do {
                     try realm.write {
@@ -78,7 +76,6 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     func setUnfavorite(from game: GameEntity) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
-                print("User Realm file location: \(realm.configuration.fileURL!.path)")
                 
                 do {
                     try realm.write {
@@ -98,7 +95,6 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     func addGameDetail(from game: GameEntity) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
-                print("User Realm file location: \(realm.configuration.fileURL!.path)")
                 
                 do {
                     try realm.write {
@@ -137,7 +133,6 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     func getGames() -> AnyPublisher<[GameEntity], Error> {
         return Future<[GameEntity], Error> { completion in
             if let realm = self.realm {
-                print("User Realm file location: \(realm.configuration.fileURL!.path)")
                 
                 let games: Results<GameEntity> = {
                     realm.objects(GameEntity.self)
@@ -154,7 +149,6 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     ) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
-                print("User Realm file location: \(realm.configuration.fileURL!.path)")
                 
                 do {
                     try realm.write {
