@@ -15,6 +15,7 @@
 		7C01E14B26D1209800CC7954 /* PlatformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14A26D1209800CC7954 /* PlatformModel.swift */; };
 		7C01E14D26D120AD00CC7954 /* PublisherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14C26D120AD00CC7954 /* PublisherModel.swift */; };
 		7C01E14F26D120C400CC7954 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14E26D120C400CC7954 /* StoreModel.swift */; };
+		7C15F0DD26E3F93E00F65891 /* RemoteDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15F0DC26E3F93E00F65891 /* RemoteDataSourceTest.swift */; };
 		7C23C41A26C6C6D0005D08E4 /* FloatingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C41926C6C6D0005D08E4 /* FloatingTabBar.swift */; };
 		7C23C41D26C6CC02005D08E4 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C41C26C6CC02005D08E4 /* FavoriteView.swift */; };
 		7C23C42126C6E307005D08E4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23C42026C6E307005D08E4 /* AboutView.swift */; };
@@ -99,6 +100,7 @@
 		7C01E14A26D1209800CC7954 /* PlatformModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformModel.swift; sourceTree = "<group>"; };
 		7C01E14C26D120AD00CC7954 /* PublisherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherModel.swift; sourceTree = "<group>"; };
 		7C01E14E26D120C400CC7954 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
+		7C15F0DC26E3F93E00F65891 /* RemoteDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceTest.swift; sourceTree = "<group>"; };
 		7C23C41926C6C6D0005D08E4 /* FloatingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBar.swift; sourceTree = "<group>"; };
 		7C23C41C26C6CC02005D08E4 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		7C23C42026C6E307005D08E4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C15F0DA26E3F8F800F65891 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7C15F0DB26E3F90600F65891 /* Remote */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7C15F0DB26E3F90600F65891 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				7C15F0DC26E3F93E00F65891 /* RemoteDataSourceTest.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 		7C23C41B26C6CBEF005D08E4 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +311,7 @@
 		7CFFEB2326C30643007D10D9 /* Games CatalogueTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C15F0DA26E3F8F800F65891 /* Data */,
 				7CFFEB2626C30643007D10D9 /* Info.plist */,
 			);
 			path = "Games CatalogueTests";
@@ -641,6 +660,7 @@
 					};
 					7CFFEB1F26C30643007D10D9 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 						TestTargetID = 7CFFEB0626C30642007D10D9;
 					};
 					7CFFEB2A26C30643007D10D9 = {
@@ -789,6 +809,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C15F0DD26E3F93E00F65891 /* RemoteDataSourceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,6 +1011,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XG8N94C4QN;
 				INFOPLIST_FILE = "Games CatalogueTests/Info.plist";
@@ -1001,6 +1023,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fajarazay.Games-CatalogueTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Games Catalogue.app/Games Catalogue";
@@ -1012,6 +1035,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XG8N94C4QN;
 				INFOPLIST_FILE = "Games CatalogueTests/Info.plist";

@@ -207,26 +207,6 @@ final class GameMapper {
             newGame.stores.append(storeEntity)
         }
         return newGame
-//            id: gameModel.id,
-//            name: gameModel.name,
-//            backgroundImage: gameModel.backgroundImage,
-//            r: gameModel.releasedDate,
-//            rating: gameModel.rating,
-//            desc: gameModel.description,
-//            reviewsCount: gameModel.reviewsCount,
-//            isFavorite: gameModel.isFavorite,
-//            genres: gameModel.genres.map { genre in
-//                return GenreModel(id: genre.id, name: genre.name)
-//            },
-//            platforms: gameModel.platforms.map { platforms in
-//                return PlatformModel(id: platforms.id, name: platforms.name)
-//            },
-//            publishers: gameModel.publishers.map { publisher in
-//                return PublisherModel(id: publisher.id, name: publisher.name)
-//            },
-//            stores: gameModel.stores.map { store in
-//                return StoreModel(id: store.id, name: store.name, domain: store.domain)
-//            }
-//        )
+
     }
 }
