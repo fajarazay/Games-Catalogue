@@ -33,7 +33,6 @@ class DetailPresenter: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure:
-                    print("failure \(completion)")
                     self.errorMessage = String(describing: completion)
                 case .finished:
                     self.loadingState = false
@@ -51,7 +50,6 @@ class DetailPresenter: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure:
-                    print("failure \(completion)")
                     self.errorMessage = String(describing: completion)
                 case .finished:
                     self.loadingState = false
@@ -68,7 +66,6 @@ class DetailPresenter: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure:
-                    print("failure \(completion)")
                     self.errorMessage = String(describing: completion)
                 case .finished:
                     self.loadingState = false

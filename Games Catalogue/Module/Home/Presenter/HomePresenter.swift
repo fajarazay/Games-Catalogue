@@ -34,7 +34,6 @@ class HomePresenter: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure:
-                    print(completion)
                     self.errorMessage = String(describing: completion)
                     self.loadingState = false
                 case .finished:

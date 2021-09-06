@@ -30,7 +30,6 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
     func getDetailGame(gameId: Int) -> AnyPublisher<GameResponse, Error> {
         return Future<GameResponse, Error> { completion in
             if let url = URL(string: Endpoints.Gets.detailGame(idGame: gameId).url) {
-                print(url)
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: GameResponse.self) { response in
@@ -48,7 +47,6 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
     func getGames() -> AnyPublisher<[GameResponse], Error> {
         return Future<[GameResponse], Error> { completion in
             if let url = URL(string: Endpoints.Gets.listGames.url) {
-                print(url)
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: GamesResponse.self) { response in
