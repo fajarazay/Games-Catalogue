@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Common
 
 struct ErrorView: View {
     
@@ -19,12 +20,11 @@ struct ErrorView: View {
             Image("undraw_error")
                 .resizable()
                 .scaledToFit()
-            
-            Text("Connection Failed")
+            Text("title_connection_failed".localized(identifier: "com.github.fajarazay.Common"))
                 .fontWeight(.semibold)
                 .font(.system(size: 24))
             
-            Text("Could not connect to the network. \nPlease check and try again")
+            Text("subtitle_connection_failed".localized(identifier: "com.github.fajarazay.Common"))
                 .multilineTextAlignment(.center)
                 .font(.system(size: 16))
             
@@ -32,7 +32,7 @@ struct ErrorView: View {
                 homePresenter.getGames()
             } label: {
                 HStack {
-                    Text("RETRY")
+                    Text("retry".localized(identifier: "com.github.fajarazay.Common"))
                         .fontWeight(.semibold)
                         .font(.system(size: 16))
                 }

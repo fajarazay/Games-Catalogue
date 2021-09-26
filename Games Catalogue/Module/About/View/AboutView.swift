@@ -19,7 +19,7 @@ struct AboutView: View {
         Text("Fajar Septian")
           .font(.largeTitle)
       }
-      .navigationBarTitle("Profile", displayMode: .inline)
+      .navigationBarTitle("profile".localized(identifier: "com.github.fajarazay.Common"), displayMode: .inline)
     }
 }
 

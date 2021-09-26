@@ -35,7 +35,7 @@ struct FloatingTabBar: View {
                     Spacer()
                     Button {
                         self.selected = 0
-                        self.titleBar = "Home"
+                        self.titleBar = "home".localized(identifier: "com.github.fajarazay.Common")
                     } label: {
                         Image(systemName: "house.fill")
                             .foregroundColor(self.selected == 0 ? .white : ColorsManager.greyLight)
@@ -46,7 +46,7 @@ struct FloatingTabBar: View {
                     
                     Button {
                         self.selected = 1
-                        self.titleBar = "Favorites"
+                        self.titleBar = "favorites".localized(identifier: "com.github.fajarazay.Common")
                     } label: {
                         Image(systemName: "heart.fill")
                             .foregroundColor(self.selected == 1 ? .white : ColorsManager.greyLight)
@@ -57,7 +57,7 @@ struct FloatingTabBar: View {
                     
                     Button {
                         self.selected = 2
-                        self.titleBar = "Profile"
+                        self.titleBar = "profile".localized(identifier: "com.github.fajarazay.Common")
                     } label: {
                         Image(systemName: "person.fill")
                             .foregroundColor(self.selected == 2 ? .white : ColorsManager.greyLight)
