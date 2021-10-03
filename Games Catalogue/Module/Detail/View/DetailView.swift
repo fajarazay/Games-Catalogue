@@ -72,7 +72,9 @@ struct DetailView: View {
                                     Button {
                                         self.isExpanded.toggle()
                                     } label: {
-                                        Text(self.isExpanded ? "show_less".localized(identifier: "com.github.fajarazay.Common") : "show_more".localized(identifier: "com.github.fajarazay.Common"))
+                                        Text(self.isExpanded ? "show_less"
+                                                .localized(identifier: "com.github.fajarazay.Common")
+                                                : "show_more".localized(identifier: "com.github.fajarazay.Common"))
                                             .foregroundColor(hexColor(0x00BFA6))
                                             .font(.system(size: 16)).bold()
                                             .padding(.top, 4)
