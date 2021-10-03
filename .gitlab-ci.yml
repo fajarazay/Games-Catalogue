@@ -27,7 +27,7 @@ archive_project:
     - xcodebuild clean archive -archivePath build/ProjectName -scheme SchemeName
     - xcodebuild -exportArchive -exportFormat ipa -archivePath "build/ProjectName.xcarchive" -exportPath "build/ProjectName.ipa" -exportProvisioningProfile "ProvisioningProfileName"
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH == submission-2
   artifacts:
     paths:
       - build/ProjectName.ipa
