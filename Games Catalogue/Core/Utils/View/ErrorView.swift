@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Common
 
 struct ErrorView: View {
     
