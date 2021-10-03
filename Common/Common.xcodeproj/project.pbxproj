@@ -10,7 +10,7 @@
 		7C4ECE1E2700A6E300E7995F /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C4ECE1C2700A6E300E7995F /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C8B897F2700B3780073452F /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8B897E2700B3780073452F /* String+Localization.swift */; };
 		7C8B89892700B4130073452F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C8B898B2700B4130073452F /* Localizable.strings */; };
-		B1D26F15190352BF023AEC88 /* libPods-Common.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC61F4D5E7E0C171AEBC1EB /* libPods-Common.a */; };
+		AFD0F0E7843349FB5C1E8575 /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E99DA4E65DC4368E48594BE /* Pods_Common.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		7C8B897E2700B3780073452F /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		7C8B898A2700B4130073452F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7C8B898C2700B41F0073452F /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CAC61F4D5E7E0C171AEBC1EB /* libPods-Common.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Common.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E99DA4E65DC4368E48594BE /* Pods_Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F707252532576A630A8F3188 /* Pods-Common.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.release.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -30,7 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D26F15190352BF023AEC88 /* libPods-Common.a in Frameworks */,
+				AFD0F0E7843349FB5C1E8575 /* Pods_Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,7 +40,7 @@
 		1C04C219F026374D92AF716A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CAC61F4D5E7E0C171AEBC1EB /* libPods-Common.a */,
+				8E99DA4E65DC4368E48594BE /* Pods_Common.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

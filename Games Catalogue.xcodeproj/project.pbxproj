@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		106C50C7E0D501A252030C28 /* Pods_Games_Catalogue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C54970F924E3E5E34F00FE /* Pods_Games_Catalogue.framework */; };
+		11C823E45F3198742EBD69D2 /* Pods_Games_CatalogueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7476D4AF0FBEC8C2953B0C /* Pods_Games_CatalogueTests.framework */; };
+		752EF5F2F41054928CDD10AC /* Pods_Games_Catalogue_Games_CatalogueUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D27408E37CFDF60C49A4F3 /* Pods_Games_Catalogue_Games_CatalogueUITests.framework */; };
 		7C01E14126D1032200CC7954 /* PublisherEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14026D1032200CC7954 /* PublisherEntity.swift */; };
 		7C01E14326D1035900CC7954 /* PublishersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14226D1035900CC7954 /* PublishersResponse.swift */; };
 		7C01E14526D106C600CC7954 /* StoresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01E14426D106C600CC7954 /* StoresResponse.swift */; };
@@ -75,8 +76,7 @@
 		7CFFEB9126C36803007D10D9 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB9026C36803007D10D9 /* Loader.swift */; };
 		7CFFEB9426C36840007D10D9 /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFEB9326C36840007D10D9 /* ColorsManager.swift */; };
 		7CFFEB9626C369BB007D10D9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CFFEB9526C369BB007D10D9 /* Colors.xcassets */; };
-		942C7A7B979D29F4C9E5739E /* Pods_Games_Catalogue_Games_CatalogueUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2904E5C5760C531759D99929 /* Pods_Games_Catalogue_Games_CatalogueUITests.framework */; };
-		E7ECC32800AA55D4AD387F85 /* Pods_Games_CatalogueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569CE15D69C347B7E5A64A23 /* Pods_Games_CatalogueTests.framework */; };
+		DCC823E435C5C36F77D42A30 /* Pods_Games_Catalogue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8249EECCBD7EF7D75C221A07 /* Pods_Games_Catalogue.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,12 +111,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C7476D4AF0FBEC8C2953B0C /* Pods_Games_CatalogueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Games_CatalogueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		260EA71374E8DF3970E7FEEE /* Pods-Games CatalogueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Games CatalogueTests.release.xcconfig"; path = "Target Support Files/Pods-Games CatalogueTests/Pods-Games CatalogueTests.release.xcconfig"; sourceTree = "<group>"; };
-		2904E5C5760C531759D99929 /* Pods_Games_Catalogue_Games_CatalogueUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Games_Catalogue_Games_CatalogueUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4375D193575F988F2651C1FC /* Pods-Games Catalogue-Games CatalogueUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Games Catalogue-Games CatalogueUITests.debug.xcconfig"; path = "Target Support Files/Pods-Games Catalogue-Games CatalogueUITests/Pods-Games Catalogue-Games CatalogueUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D6067F1BF395758D46881F6 /* Pods-Games CatalogueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Games CatalogueTests.debug.xcconfig"; path = "Target Support Files/Pods-Games CatalogueTests/Pods-Games CatalogueTests.debug.xcconfig"; sourceTree = "<group>"; };
-		569CE15D69C347B7E5A64A23 /* Pods_Games_CatalogueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Games_CatalogueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77C54970F924E3E5E34F00FE /* Pods_Games_Catalogue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Games_Catalogue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C01E14026D1032200CC7954 /* PublisherEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherEntity.swift; sourceTree = "<group>"; };
 		7C01E14226D1035900CC7954 /* PublishersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishersResponse.swift; sourceTree = "<group>"; };
 		7C01E14426D106C600CC7954 /* StoresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresResponse.swift; sourceTree = "<group>"; };
@@ -185,9 +183,11 @@
 		7CFFEB9026C36803007D10D9 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		7CFFEB9326C36840007D10D9 /* ColorsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
 		7CFFEB9526C369BB007D10D9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		8249EECCBD7EF7D75C221A07 /* Pods_Games_Catalogue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Games_Catalogue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B18C716E0EEF42C0314F1C8 /* Pods-Games Catalogue-Games CatalogueUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Games Catalogue-Games CatalogueUITests.release.xcconfig"; path = "Target Support Files/Pods-Games Catalogue-Games CatalogueUITests/Pods-Games Catalogue-Games CatalogueUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD1DDAA529B3636F45E79FC7 /* Pods-Games Catalogue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Games Catalogue.debug.xcconfig"; path = "Target Support Files/Pods-Games Catalogue/Pods-Games Catalogue.debug.xcconfig"; sourceTree = "<group>"; };
 		BFFA4D8A19B347B4E9D17FD3 /* Pods-Games Catalogue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Games Catalogue.release.xcconfig"; path = "Target Support Files/Pods-Games Catalogue/Pods-Games Catalogue.release.xcconfig"; sourceTree = "<group>"; };
+		F9D27408E37CFDF60C49A4F3 /* Pods_Games_Catalogue_Games_CatalogueUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Games_Catalogue_Games_CatalogueUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +201,7 @@
 				7CE4EF1126E3972500B247D7 /* Cleanse in Frameworks */,
 				7CFFEB6026C31A8C007D10D9 /* Alamofire in Frameworks */,
 				7C8B898E2700B4710073452F /* Common.framework in Frameworks */,
-				106C50C7E0D501A252030C28 /* Pods_Games_Catalogue.framework in Frameworks */,
+				DCC823E435C5C36F77D42A30 /* Pods_Games_Catalogue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7ECC32800AA55D4AD387F85 /* Pods_Games_CatalogueTests.framework in Frameworks */,
+				11C823E45F3198742EBD69D2 /* Pods_Games_CatalogueTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				942C7A7B979D29F4C9E5739E /* Pods_Games_Catalogue_Games_CatalogueUITests.framework in Frameworks */,
+				752EF5F2F41054928CDD10AC /* Pods_Games_Catalogue_Games_CatalogueUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,9 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				7C8B898D2700B4710073452F /* Common.framework */,
-				77C54970F924E3E5E34F00FE /* Pods_Games_Catalogue.framework */,
-				2904E5C5760C531759D99929 /* Pods_Games_Catalogue_Games_CatalogueUITests.framework */,
-				569CE15D69C347B7E5A64A23 /* Pods_Games_CatalogueTests.framework */,
+				8249EECCBD7EF7D75C221A07 /* Pods_Games_Catalogue.framework */,
+				F9D27408E37CFDF60C49A4F3 /* Pods_Games_Catalogue_Games_CatalogueUITests.framework */,
+				0C7476D4AF0FBEC8C2953B0C /* Pods_Games_CatalogueTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
