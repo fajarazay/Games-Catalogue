@@ -17,9 +17,9 @@ build_project:
     - xcodebuild clean -project Games Catalogue.xcodeproj -scheme SchemeName | xcpretty
     - xcodebuild test -project Games Catalogue.xcodeproj -scheme SchemeName -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5' | xcpretty -s
   tags:
-    - ios_11-3
-    - xcode_9-3
-    - macos_10-13
+    - ios_14-5
+    - xcode_12-5
+    - macos_11-4
 
 archive_project:
   stage: archive
