@@ -14,7 +14,7 @@ stages:
 build_project:
   stage: build
   script:
-    - xcodebuild clean -project Games Catalogue.xcodeproj -scheme Games Catalogue | xcpretty
+    - xcodebuild clean -project "Games Catalogue.xcodeproj"' -scheme "Games Catalogue.xcodeproj"' | xcpretty
     - xcodebuild test -project '"Games Catalogue.xcodeproj"' -scheme '"Games Catalogue"' -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5' | xcpretty -s
   tags:
     - ios_14-5
