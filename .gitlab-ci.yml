@@ -1,37 +1,25 @@
-# To contribute improvements to CI/CD templates, please follow the Development guide at:
-# https://docs.gitlab.com/ee/development/cicd/templates.html
-# This specific template is located at:
-# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Swift.gitlab-ci.yml
-
-# Lifted from: https://about.gitlab.com/2016/03/10/setting-up-gitlab-ci-for-ios-projects/
-# This file assumes an own GitLab CI runner, setup on a macOS system.
 stages:
-  - build
-  - test
-  - archive
-  - deploy
-
-build_project:
-  stage: build
-  script:
-    - xcodebuild clean -project ProjectName.xcodeproj -scheme SchemeName | xcpretty
-    - xcodebuild test -project ProjectName.xcodeproj -scheme SchemeName -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.3' | xcpretty -s
-  tags:
-    - ios_11-3
-    - xcode_9-3
-    - macos_10-13
-
-archive_project:
-  stage: archive
-  script:
-    - xcodebuild clean archive -archivePath build/ProjectName -scheme SchemeName
-    - xcodebuild -exportArchive -exportFormat ipa -archivePath "build/ProjectName.xcarchive" -exportPath "build/ProjectName.ipa" -exportProvisioningProfile "ProvisioningProfileName"
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  artifacts:
-    paths:
-      - build/ProjectName.ipa
-  tags:
-    - ios_11-3
-    - xcode_9-3
-    - macos_10-13
+ - update
+update_project:
+ stage: update
+ script:
+   - cd ${PROJECT_NAME}-main
+   - xcrun agvtool next-version -all
+   - pod install
+   - xcodebuild clean -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_SCHEME}
+   - xcodebuild build -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_SCHEME} PROVISIONING_PROFILE=c52980e0-cd32-4e7b-b9df-54974bc03f98
+   - xcodebuild archive -workspace ${PROJECT_NAME}.xcworkspace -scheme sweatgen -archivePath ${PROJECT_NAME}.xcarchive
+   - xcodebuild -exportArchive -archivePath ${PROJECT_NAME}.xcarchive -exportPath ./ -exportOptionsPlist ExportOptions.plist
+   - /Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support/altool --upload-app -f sweatgen.ipa -u ${EMAIL_APP_STORE} -p ${PASSWORD_APP_STORE}
+   - git add ${PROJECT_NAME}/Config/Info.plist
+   - git add ${PROJECT_NAME}.xcodeproj/project.pbxproj
+   - git commit -m "update version from gitlab runner "
+   - git push http://username:token@git.gits.id/${PROJECT_NAME}.git HEAD:master
+ only:
+   refs:
+     - master
+     - merge_requests
+   variables:
+     - $CI_COMMIT_MESSAGE =~ /\Q[build]\E/
+ tags:
+   - /^ios-.*$/
