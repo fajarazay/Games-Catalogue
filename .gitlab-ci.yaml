@@ -14,21 +14,21 @@ stages:
 build_project:
   stage: build
   script:
-    - xcodebuild clean -project Games Catalogue.xcodeproj -scheme Games Catalogue | xcpretty
-    - xcodebuild test -project Games Catalogue.xcodeproj -scheme Games Catalogue -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5' | xcpretty -s
+    - xcodebuild clean -project Games%20Catalogue.xcodeproj -scheme Games%20Catalogue | xcpretty
+    - xcodebuild test -project Games%20Catalogue.xcodeproj -scheme Games%20Catalogue -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5' | xcpretty -s
   tags:
     - ios_14-5
 
 archive_project:
   stage: archive
   script:
-    - xcodebuild clean archive -archivePath build/ProjectName -scheme Games Catalogue
-    - xcodebuild -exportArchive -exportFormat ipa -archivePath "build/ProjectName.xcarchive" -exportPath "build/ProjectName.ipa" -exportProvisioningProfile "ProvisioningProfileName"
+    - xcodebuild clean archive -archivePath build/Games%20Catalogue -scheme Games%20Catalogue
+    - xcodebuild -exportArchive -exportFormat ipa -archivePath "build/Games%20Catalogue.xcarchive" -exportPath "build/Games%20Catalogue.ipa" -exportProvisioningProfile "ProvisioningProfileName"
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   artifacts:
     paths:
-      - build/ProjectName.ipa
+      - build/Games%20Catalogue.ipa
   tags:
     - ios_14-5
     
