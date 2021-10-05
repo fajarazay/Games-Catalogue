@@ -31,7 +31,6 @@
 		7C6B9FD526E35FE900FD7820 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B9FD426E35FE900FD7820 /* EmptyListView.swift */; };
 		7C8A9ED726DD3273007BFCC0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A9ED626DD3273007BFCC0 /* Constant.swift */; };
 		7C8B898E2700B4710073452F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8B898D2700B4710073452F /* Common.framework */; };
-		7C8B898F2700B4710073452F /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8B898D2700B4710073452F /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7C9A2A0D26CBA5B2005743B7 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9A2A0C26CBA5B2005743B7 /* DateUtil.swift */; };
 		7C9A2A0F26CBA5FF005743B7 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9A2A0E26CBA5FF005743B7 /* RatingView.swift */; };
 		7C9A2A1126CBA634005743B7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9A2A1026CBA634005743B7 /* UIColor.swift */; };
@@ -95,20 +94,6 @@
 			remoteInfo = "Games Catalogue";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		7C8B89902700B4710073452F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7C8B898F2700B4710073452F /* Common.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C7476D4AF0FBEC8C2953B0C /* Pods_Games_CatalogueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Games_CatalogueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -654,7 +639,6 @@
 				7CFFEB0426C30642007D10D9 /* Frameworks */,
 				7CFFEB0526C30642007D10D9 /* Resources */,
 				7CFFEB3D26C30993007D10D9 /* ShellScript */,
-				7C8B89902700B4710073452F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
