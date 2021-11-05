@@ -55,7 +55,7 @@ struct DetailView: View {
                                 
                                 if !detailPresenter.loadingState && !detailPresenter.game.publishers.isEmpty {
                                     HStack(alignment: .center) {
-                                        Text("Publishers")
+                                        Text("publishers".localized(identifier: "com.github.fajarazay.Common"))
                                             .font(.system(size: 16))
                                             .fontWeight(.bold)
                                         Text(detailPresenter.game.publishers.reduce(
@@ -72,7 +72,9 @@ struct DetailView: View {
                                     Button {
                                         self.isExpanded.toggle()
                                     } label: {
-                                        Text(self.isExpanded ? "Show Less..." : "Show More...")
+                                        Text(self.isExpanded ? "show_less"
+                                                .localized(identifier: "com.github.fajarazay.Common")
+                                                : "show_more".localized(identifier: "com.github.fajarazay.Common"))
                                             .foregroundColor(hexColor(0x00BFA6))
                                             .font(.system(size: 16)).bold()
                                             .padding(.top, 4)
@@ -81,7 +83,7 @@ struct DetailView: View {
                                 }
                                 
                                 Group {
-                                    Text("Platforms")
+                                    Text("platforms".localized(identifier: "com.github.fajarazay.Common"))
                                         .font(.system(size: 16))
                                         .fontWeight(.bold)
                                         .padding(.top, 24)
@@ -93,7 +95,10 @@ struct DetailView: View {
                                 }
                                 
                                 VStack(alignment: .leading) {
-                                    Text("Reviews & Ratings")
+                                   let reviews =  "reviews".localized(identifier: "com.github.fajarazay.Common")
+                                    let ratings =  "ratings".localized(identifier: "com.github.fajarazay.Common")
+
+                                    Text("\(reviews) & \(ratings)")
                                         .font(.system(size: 16))
                                         .fontWeight(.bold)
                                     
@@ -104,7 +109,7 @@ struct DetailView: View {
                                         VStack(alignment: .leading) {
                                             RatingView(rating: detailPresenter.game.rating)
                                             HStack {
-                                                Text("\(detailPresenter.game.reviewsCount) reviews")
+                                                Text("\(detailPresenter.game.reviewsCount) \(reviews)")
                                                     .font(.system(size: 16))
                                                     .foregroundColor(Color.gray)
                                                 Spacer()
@@ -115,7 +120,7 @@ struct DetailView: View {
                                 
                                 Group {
                                     VStack(alignment: .leading) {
-                                        Text("Available on ")
+                                        Text("available_on".localized(identifier: "com.github.fajarazay.Common"))
                                             .font(.system(size: 16))
                                             .fontWeight(.bold)
                                             .padding(.bottom, 16)

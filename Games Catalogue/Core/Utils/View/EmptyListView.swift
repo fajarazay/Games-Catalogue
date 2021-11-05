@@ -18,11 +18,11 @@ struct EmptyListView: View {
         .resizable()
         .scaledToFit()
       
-      Text("Data Not Found")
+      Text("title_data_not_found".localized(identifier: "com.github.fajarazay.Common"))
         .fontWeight(.semibold)
         .font(.title)
       
-      Text("You haven't add any game as your favorite")
+      Text("subtitle_empty_game_favorite".localized(identifier: "com.github.fajarazay.Common"))
         .padding(.all, 16)
         .multilineTextAlignment(.center)
       Spacer()

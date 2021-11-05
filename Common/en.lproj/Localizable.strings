@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Common
+
+  Created by Quipper Indonesia on 26/09/21.
+  
+*/
+
+"title_data_not_found" = "Data Not Found";
+"subtitle_empty_game_favorite" = "You haven't add any game as your favorite";
+"title_connection_failed" = "Connection Failed";
+"subtitle_connection_failed" = "Could not connect to the network. \nPlease check and try again";
+"retry" = "RETRY";
+"show_more" = " Show More...";
+"show_less" = " Show Less...";
+"reviews" = "Reviews";
+"ratings" = "Ratings";
+"publishers" = "Publishers";
+"available_on" = "Available on";
+"favorite" = "Favorites";
+"profile" = "Profile";
+"home" = "Home";
+"platforms" = "Platforms";
